@@ -199,9 +199,9 @@ eepromWriteByte(0xFF,0xAA);
        //write master tag
        eepromWriteByte(__memBegin,0);//0= master xuong
        eepromWriteByte(__memBegin+1,0);//0
-       eepromWriteByte(__memBegin+2,0x81);//87
-       eepromWriteByte(__memBegin+3,0x2f);//3a
-       eepromWriteByte(__memBegin+4,0x22);//f8 
+       eepromWriteByte(__memBegin+2,0x87);//87
+       eepromWriteByte(__memBegin+3,0x3a);//3a
+       eepromWriteByte(__memBegin+4,0xf8);//f8 
 
 	}
     eepromReadBlock(__memBegin,buffTag,maxTag*5);

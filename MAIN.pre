@@ -1183,9 +1183,9 @@ if(eepromReadByte(0x06)!=0){
 
 eepromWriteByte(0x06,0);
 eepromWriteByte(0x06+1,0);
-eepromWriteByte(0x06+2,0x81);
-eepromWriteByte(0x06+3,0x2f);
-eepromWriteByte(0x06+4,0x22);
+eepromWriteByte(0x06+2,0x87);
+eepromWriteByte(0x06+3,0x3a);
+eepromWriteByte(0x06+4,0xf8);
 
 }
 eepromReadBlock(0x06,buffTag,5*5);

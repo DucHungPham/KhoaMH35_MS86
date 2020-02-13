@@ -2218,15 +2218,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAIN.C: 201: eepromWriteByte(0x06+1,0);
 "201
 [e ( _eepromWriteByte (2 , -> + -> 6 `i -> 1 `i `uc -> -> 0 `i `uc ]
-[; ;MAIN.C: 202: eepromWriteByte(0x06+2,0x81);
+[; ;MAIN.C: 202: eepromWriteByte(0x06+2,0x87);
 "202
-[e ( _eepromWriteByte (2 , -> + -> 6 `i -> 2 `i `uc -> -> 129 `i `uc ]
-[; ;MAIN.C: 203: eepromWriteByte(0x06+3,0x2f);
+[e ( _eepromWriteByte (2 , -> + -> 6 `i -> 2 `i `uc -> -> 135 `i `uc ]
+[; ;MAIN.C: 203: eepromWriteByte(0x06+3,0x3a);
 "203
-[e ( _eepromWriteByte (2 , -> + -> 6 `i -> 3 `i `uc -> -> 47 `i `uc ]
-[; ;MAIN.C: 204: eepromWriteByte(0x06+4,0x22);
+[e ( _eepromWriteByte (2 , -> + -> 6 `i -> 3 `i `uc -> -> 58 `i `uc ]
+[; ;MAIN.C: 204: eepromWriteByte(0x06+4,0xf8);
 "204
-[e ( _eepromWriteByte (2 , -> + -> 6 `i -> 4 `i `uc -> -> 34 `i `uc ]
+[e ( _eepromWriteByte (2 , -> + -> 6 `i -> 4 `i `uc -> -> 248 `i `uc ]
 "206
 }
 [e :U 121 ]

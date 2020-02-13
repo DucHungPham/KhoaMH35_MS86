@@ -100,21 +100,21 @@
 		CLRR 	72H 			//0036 	0172
 		LCALL 	44AH 			//0037 	344A
 
-		//;MAIN.C: 202: eepromWriteByte(0x06+2,0x81);
-		LDWI 	81H 			//0038 	2A81
+		//;MAIN.C: 202: eepromWriteByte(0x06+2,0x87);
+		LDWI 	87H 			//0038 	2A87
 		STR 	72H 			//0039 	01F2
 		LDWI 	8H 			//003A 	2A08
 		LCALL 	44AH 			//003B 	344A
 		ORG		003CH
 
-		//;MAIN.C: 203: eepromWriteByte(0x06+3,0x2f);
-		LDWI 	2FH 			//003C 	2A2F
+		//;MAIN.C: 203: eepromWriteByte(0x06+3,0x3a);
+		LDWI 	3AH 			//003C 	2A3A
 		STR 	72H 			//003D 	01F2
 		LDWI 	9H 			//003E 	2A09
 		LCALL 	44AH 			//003F 	344A
 
-		//;MAIN.C: 204: eepromWriteByte(0x06+4,0x22);
-		LDWI 	22H 			//0040 	2A22
+		//;MAIN.C: 204: eepromWriteByte(0x06+4,0xf8);
+		LDWI 	F8H 			//0040 	2AF8
 		STR 	72H 			//0041 	01F2
 		LDWI 	AH 			//0042 	2A0A
 		LCALL 	44AH 			//0043 	344A

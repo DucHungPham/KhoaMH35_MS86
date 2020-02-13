@@ -1336,20 +1336,20 @@ l7535:
 	movlw	(07h)
 	fcall	_eepromWriteByte
 	line	202
-;MAIN.C: 202: eepromWriteByte(0x06+2,0x81);
-	movlw	(081h)
+;MAIN.C: 202: eepromWriteByte(0x06+2,0x87);
+	movlw	(087h)
 	movwf	(?_eepromWriteByte)
 	movlw	(08h)
 	fcall	_eepromWriteByte
 	line	203
-;MAIN.C: 203: eepromWriteByte(0x06+3,0x2f);
-	movlw	(02Fh)
+;MAIN.C: 203: eepromWriteByte(0x06+3,0x3a);
+	movlw	(03Ah)
 	movwf	(?_eepromWriteByte)
 	movlw	(09h)
 	fcall	_eepromWriteByte
 	line	204
-;MAIN.C: 204: eepromWriteByte(0x06+4,0x22);
-	movlw	(022h)
+;MAIN.C: 204: eepromWriteByte(0x06+4,0xf8);
+	movlw	(0F8h)
 	movwf	(?_eepromWriteByte)
 	movlw	(0Ah)
 	fcall	_eepromWriteByte
