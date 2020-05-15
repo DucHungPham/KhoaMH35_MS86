@@ -429,14 +429,12 @@ _EEIF	set	103
 _GIE	set	95
 	global	_PEIE
 _PEIE	set	94
-	global	_RA2
-_RA2	set	42
 	global	_RA3
 _RA3	set	43
 	global	_RA5
 _RA5	set	45
-	global	_RC0
-_RC0	set	56
+	global	_RA6
+_RA6	set	46
 	global	_RC1
 _RC1	set	57
 	global	_T0IE
@@ -1215,11 +1213,11 @@ _main:
 	line	162
 	
 l7505:	
-;MAIN.C: 162: unsigned char idop,tmp,idState=0;
+;MAIN.C: 162: unsigned char idop, tmp, idState = 0;
 	clrf	(main@idState)
 	line	164
 ;MAIN.C: 163: unsigned char t1;
-;MAIN.C: 164: unsigned char buzFre=0;
+;MAIN.C: 164: unsigned char buzFre = 0;
 	clrf	(main@buzFre)
 	line	166
 	
@@ -1250,7 +1248,7 @@ l7515:
 	line	178
 	
 l7517:	
-;MAIN.C: 178: eepromWriteByte(0xFF,0xAA);
+;MAIN.C: 178: eepromWriteByte(0xFF, 0xAA);
 	movlw	(0AAh)
 	movwf	(?_eepromWriteByte)
 	movlw	(0FFh)
@@ -1258,7 +1256,7 @@ l7517:
 	line	179
 	
 l7519:	
-;MAIN.C: 179: eepromWriteByte(0xFF,0xAA);
+;MAIN.C: 179: eepromWriteByte(0xFF, 0xAA);
 	movlw	(0AAh)
 	movwf	(?_eepromWriteByte)
 	movlw	(0FFh)
@@ -1266,7 +1264,7 @@ l7519:
 	line	182
 	
 l7521:	
-;MAIN.C: 182: TRISC &=0xfe;
+;MAIN.C: 182: TRISC &= 0xfe;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	(135)^080h+(0/8),(0)&7	;volatile
 	line	184
@@ -1277,7 +1275,7 @@ l7523:
 	line	193
 	
 l7525:	
-;MAIN.C: 193: if(eepromReadByte(0x02) == 0xff) eepromWriteByte(0x02,0);
+;MAIN.C: 193: if (eepromReadByte(0x02) == 0xff) eepromWriteByte(0x02, 0);
 	movlw	(02h)
 	fcall	_eepromReadByte
 	xorlw	0FFh
@@ -1295,7 +1293,7 @@ l7527:
 	line	194
 	
 l7529:	
-;MAIN.C: 194: if(eepromReadByte(0x01)==0xff)eepromWriteByte(0x01,0);
+;MAIN.C: 194: if (eepromReadByte(0x01) == 0xff)eepromWriteByte(0x01, 0);
 	movlw	(01h)
 	fcall	_eepromReadByte
 	xorlw	0FFh
@@ -1313,7 +1311,7 @@ l7531:
 	line	196
 	
 l7533:	
-;MAIN.C: 196: if(eepromReadByte(0x06)!=0){
+;MAIN.C: 196: if (eepromReadByte(0x06) != 0) {
 	movlw	(06h)
 	fcall	_eepromReadByte
 	xorlw	0
@@ -1326,29 +1324,29 @@ u1940:
 	line	200
 	
 l7535:	
-;MAIN.C: 200: eepromWriteByte(0x06,0);
+;MAIN.C: 200: eepromWriteByte(0x06, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(06h)
 	fcall	_eepromWriteByte
 	line	201
-;MAIN.C: 201: eepromWriteByte(0x06+1,0);
+;MAIN.C: 201: eepromWriteByte(0x06 + 1, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(07h)
 	fcall	_eepromWriteByte
 	line	202
-;MAIN.C: 202: eepromWriteByte(0x06+2,0x87);
+;MAIN.C: 202: eepromWriteByte(0x06 + 2, 0x87);
 	movlw	(087h)
 	movwf	(?_eepromWriteByte)
 	movlw	(08h)
 	fcall	_eepromWriteByte
 	line	203
-;MAIN.C: 203: eepromWriteByte(0x06+3,0x3a);
+;MAIN.C: 203: eepromWriteByte(0x06 + 3, 0x3a);
 	movlw	(03Ah)
 	movwf	(?_eepromWriteByte)
 	movlw	(09h)
 	fcall	_eepromWriteByte
 	line	204
-;MAIN.C: 204: eepromWriteByte(0x06+4,0xf8);
+;MAIN.C: 204: eepromWriteByte(0x06 + 4, 0xf8);
 	movlw	(0F8h)
 	movwf	(?_eepromWriteByte)
 	movlw	(0Ah)
@@ -1357,7 +1355,7 @@ l7535:
 	
 l7537:	
 ;MAIN.C: 206: }
-;MAIN.C: 207: eepromReadBlock(0x06,buffTag,5*5);
+;MAIN.C: 207: eepromReadBlock(0x06, buffTag, 5 * 5);
 	movlw	(_buffTag)&0ffh
 	movwf	(?_eepromReadBlock)
 	movlw	(019h)
@@ -1368,7 +1366,7 @@ l7537:
 	
 l7539:	
 ;MAIN.C: 210: {
-;MAIN.C: 211: if( eepromReadByte(0x00) == 7){
+;MAIN.C: 211: if ( eepromReadByte(0x00) == 7) {
 	movlw	(0)
 	fcall	_eepromReadByte
 	xorlw	07h
@@ -1395,7 +1393,7 @@ l7543:
 	line	215
 	
 l7545:	
-;MAIN.C: 215: if(t1 == 3){
+;MAIN.C: 215: if (t1 == 3) {
 	movf	(main@t1),w
 	xorlw	03h
 	skipz
@@ -1407,7 +1405,7 @@ u1960:
 	line	220
 	
 l7547:	
-;MAIN.C: 220: if((eepromReadByte(0x03)==8) && (eepromReadByte(0x04)==3)&&(eepromReadByte(0x05)==3)){
+;MAIN.C: 220: if ((eepromReadByte(0x03) == 8) && (eepromReadByte(0x04) == 3) && (eepromReadByte(0x05) == 3)) {
 	movlw	(03h)
 	fcall	_eepromReadByte
 	xorlw	08h
@@ -1442,19 +1440,19 @@ u1990:
 	line	221
 	
 l7553:	
-;MAIN.C: 221: eepromWriteByte(0x01,1);
+;MAIN.C: 221: eepromWriteByte(0x01, 1);
 	clrf	(?_eepromWriteByte)
 	incf	(?_eepromWriteByte),f
 	movlw	(01h)
 	fcall	_eepromWriteByte
 	line	222
-;MAIN.C: 222: setState(0,0);
+;MAIN.C: 222: setState(0, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(0)
 	fcall	_setState
 	line	223
-;MAIN.C: 223: beep(20,2);
+;MAIN.C: 223: beep(20, 2);
 	movlw	(02h)
 	movwf	(?_beep)
 	movlw	(014h)
@@ -1465,15 +1463,15 @@ l7553:
 	line	226
 	
 l7555:	
-;MAIN.C: 225: else{
-;MAIN.C: 226: setState(1,12);
+;MAIN.C: 225: else {
+;MAIN.C: 226: setState(1, 12);
 	movlw	0Ch
 	movwf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(01h)
 	fcall	_setState
 	line	227
-;MAIN.C: 227: beep(10,5);
+;MAIN.C: 227: beep(10, 5);
 	movlw	(05h)
 	movwf	(?_beep)
 	movlw	(0Ah)
@@ -1483,27 +1481,27 @@ l7555:
 l4176:	
 	line	230
 ;MAIN.C: 228: }
-;MAIN.C: 230: eepromWriteByte(0x00,0);
+;MAIN.C: 230: eepromWriteByte(0x00, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(0)
 	fcall	_eepromWriteByte
 	line	231
-;MAIN.C: 231: eepromWriteByte(0x02,0);
+;MAIN.C: 231: eepromWriteByte(0x02, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(02h)
 	fcall	_eepromWriteByte
 	line	232
-;MAIN.C: 232: eepromWriteByte(0x05,0);
+;MAIN.C: 232: eepromWriteByte(0x05, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(05h)
 	fcall	_eepromWriteByte
 	line	233
-;MAIN.C: 233: eepromWriteByte(0x04,0);
+;MAIN.C: 233: eepromWriteByte(0x04, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(04h)
 	fcall	_eepromWriteByte
 	line	234
-;MAIN.C: 234: eepromWriteByte(0x03,0);
+;MAIN.C: 234: eepromWriteByte(0x03, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(03h)
 	fcall	_eepromWriteByte
@@ -1513,7 +1511,7 @@ l4176:
 	line	238
 	
 l7557:	
-;MAIN.C: 237: else{
+;MAIN.C: 237: else {
 ;MAIN.C: 238: tmp = eepromReadByte(0x02) ;
 	movlw	(02h)
 	fcall	_eepromReadByte
@@ -1525,7 +1523,7 @@ l7559:
 ;MAIN.C: 239: tmp++;
 	incf	(main@tmp),f
 	line	240
-;MAIN.C: 240: eepromWriteByte(0x02,tmp);
+;MAIN.C: 240: eepromWriteByte(0x02, tmp);
 	movf	(main@tmp),w
 	movwf	(?_eepromWriteByte)
 	movlw	(02h)
@@ -1533,13 +1531,13 @@ l7559:
 	line	241
 	
 l7561:	
-;MAIN.C: 241: PwInNum=0;
+;MAIN.C: 241: PwInNum = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	clrf	(_PwInNum)
 	line	242
 	
 l7563:	
-;MAIN.C: 242: setState(7,1);
+;MAIN.C: 242: setState(7, 1);
 	clrf	(?_setState)
 	incf	(?_setState),f
 	clrf	(?_setState+1)
@@ -1549,8 +1547,8 @@ l7563:
 	line	247
 	
 l7565:	
-;MAIN.C: 246: else{
-;MAIN.C: 247: setState(1,12);
+;MAIN.C: 246: else {
+;MAIN.C: 247: setState(1, 12);
 	movlw	0Ch
 	movwf	(?_setState)
 	clrf	(?_setState+1)
@@ -1560,7 +1558,7 @@ l7565:
 	
 l7567:	
 ;MAIN.C: 248: }
-;MAIN.C: 250: if(eepromReadByte(0x01)== 1){
+;MAIN.C: 250: if (eepromReadByte(0x01) == 1) {
 	movlw	(01h)
 	fcall	_eepromReadByte
 	xorlw	01h
@@ -1573,7 +1571,7 @@ u2000:
 	line	251
 	
 l7569:	
-;MAIN.C: 251: setState(0,0);
+;MAIN.C: 251: setState(0, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(0)
@@ -1583,7 +1581,7 @@ l7569:
 l7571:	
 ;MAIN.C: 252: }
 ;MAIN.C: 253: }
-;MAIN.C: 258: tmp=0;
+;MAIN.C: 258: tmp = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	clrf	(main@tmp)
 	line	263
@@ -1595,7 +1593,7 @@ l7573:
 	line	265
 	
 l7575:	
-;MAIN.C: 265: if(idop){
+;MAIN.C: 265: if (idop) {
 	movf	(main@idop),w
 	skipz
 	goto	u2010
@@ -1636,21 +1634,21 @@ l7585:
 	movf	0+(_keyID)+04h,w
 	fcall	_SendNum
 	line	272
-;MAIN.C: 272: idop = id_search(keyID,buffTag);
+;MAIN.C: 272: idop = id_search(keyID, buffTag);
 	movlw	(_buffTag)&0ffh
 	movwf	(?_id_search)
 	movlw	(_keyID)&0ffh
 	fcall	_id_search
 	movwf	(main@idop)
 	line	273
-;MAIN.C: 273: switch (mtState){
+;MAIN.C: 273: switch (mtState) {
 	goto	l7685
 	line	279
 	
 l7587:	
 ;MAIN.C: 276: case 1:
 ;MAIN.C: 277: case 2:
-;MAIN.C: 279: if((idop>1) && (idop <6))
+;MAIN.C: 279: if ((idop > 1) && (idop < 6))
 	movlw	(02h)
 	subwf	(main@idop),w
 	skipc
@@ -1673,7 +1671,7 @@ u2030:
 	
 l7591:	
 ;MAIN.C: 280: {
-;MAIN.C: 281: if( eepromReadByte(0x00) == 7) eepromWriteByte(0x00,0);
+;MAIN.C: 281: if ( eepromReadByte(0x00) == 7) eepromWriteByte(0x00, 0);
 	movlw	(0)
 	fcall	_eepromReadByte
 	xorlw	07h
@@ -1691,7 +1689,7 @@ l7593:
 	line	282
 	
 l7595:	
-;MAIN.C: 282: if(mtState==7){
+;MAIN.C: 282: if (mtState == 7) {
 	bcf	status, 5	;RP0=0, select bank0
 	movf	(_mtState),w
 	xorlw	07h
@@ -1704,22 +1702,22 @@ u2050:
 	line	283
 	
 l7597:	
-;MAIN.C: 283: eepromWriteByte(0x02,0);
+;MAIN.C: 283: eepromWriteByte(0x02, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(02h)
 	fcall	_eepromWriteByte
 	line	284
-;MAIN.C: 284: eepromWriteByte(0x05,0);
+;MAIN.C: 284: eepromWriteByte(0x05, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(05h)
 	fcall	_eepromWriteByte
 	line	285
-;MAIN.C: 285: eepromWriteByte(0x04,0);
+;MAIN.C: 285: eepromWriteByte(0x04, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(04h)
 	fcall	_eepromWriteByte
 	line	286
-;MAIN.C: 286: eepromWriteByte(0x03,0);
+;MAIN.C: 286: eepromWriteByte(0x03, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(03h)
 	fcall	_eepromWriteByte
@@ -1728,13 +1726,13 @@ l7597:
 l4188:	
 	line	288
 ;MAIN.C: 287: }
-;MAIN.C: 288: setState(0,0);
+;MAIN.C: 288: setState(0, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(0)
 	fcall	_setState
 	line	289
-;MAIN.C: 289: beep(10,1);
+;MAIN.C: 289: beep(10, 1);
 	clrf	(?_beep)
 	incf	(?_beep),f
 	movlw	(0Ah)
@@ -1745,7 +1743,7 @@ l4188:
 	line	292
 	
 l7599:	
-;MAIN.C: 292: else if(idop==1)
+;MAIN.C: 292: else if (idop == 1)
 	decf	(main@idop),w
 	skipz
 	goto	u2061
@@ -1757,7 +1755,7 @@ u2060:
 	
 l7601:	
 ;MAIN.C: 293: {
-;MAIN.C: 295: id_clear(2,5);
+;MAIN.C: 295: id_clear(2, 5);
 	movlw	(05h)
 	movwf	(?_id_clear)
 	movlw	(02h)
@@ -1765,7 +1763,7 @@ l7601:
 	line	296
 	
 l7603:	
-;MAIN.C: 296: setState(3,0);
+;MAIN.C: 296: setState(3, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(03h)
@@ -1773,13 +1771,13 @@ l7603:
 	line	297
 	
 l7605:	
-;MAIN.C: 297: tmp=1;
+;MAIN.C: 297: tmp = 1;
 	clrf	(main@tmp)
 	incf	(main@tmp),f
 	line	298
 	
 l7607:	
-;MAIN.C: 298: beep(10,3);
+;MAIN.C: 298: beep(10, 3);
 	movlw	(03h)
 	movwf	(?_beep)
 	movlw	(0Ah)
@@ -1788,7 +1786,7 @@ l7607:
 	line	304
 	
 l7609:	
-;MAIN.C: 304: if(idop<=5 && idop!=1 ){
+;MAIN.C: 304: if (idop <= 5 && idop != 1 ) {
 	movlw	(06h)
 	subwf	(main@idop),w
 	skipnc
@@ -1809,7 +1807,7 @@ u2080:
 	line	305
 	
 l7613:	
-;MAIN.C: 305: if(eepromReadByte(0x01)==1){
+;MAIN.C: 305: if (eepromReadByte(0x01) == 1) {
 	movlw	(01h)
 	fcall	_eepromReadByte
 	xorlw	01h
@@ -1822,12 +1820,12 @@ u2090:
 	line	306
 	
 l7615:	
-;MAIN.C: 306: eepromWriteByte(0x01,0);
+;MAIN.C: 306: eepromWriteByte(0x01, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(01h)
 	fcall	_eepromWriteByte
 	line	307
-;MAIN.C: 307: beep(10,2);
+;MAIN.C: 307: beep(10, 2);
 	movlw	(02h)
 	movwf	(?_beep)
 	movlw	(0Ah)
@@ -1836,7 +1834,7 @@ l7615:
 	line	311
 	
 l7617:	
-;MAIN.C: 311: else if(idop==1){
+;MAIN.C: 311: else if (idop == 1) {
 	decf	(main@idop),w
 	skipz
 	goto	u2101
@@ -1847,7 +1845,7 @@ u2100:
 	line	312
 	
 l7619:	
-;MAIN.C: 312: id_clear(2,5);
+;MAIN.C: 312: id_clear(2, 5);
 	movlw	(05h)
 	movwf	(?_id_clear)
 	movlw	(02h)
@@ -1855,7 +1853,7 @@ l7619:
 	line	313
 	
 l7621:	
-;MAIN.C: 313: setState(3,0);
+;MAIN.C: 313: setState(3, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(03h)
@@ -1863,13 +1861,13 @@ l7621:
 	line	314
 	
 l7623:	
-;MAIN.C: 314: tmp=1;
+;MAIN.C: 314: tmp = 1;
 	clrf	(main@tmp)
 	incf	(main@tmp),f
 	line	315
 	
 l7625:	
-;MAIN.C: 315: beep(10,3);
+;MAIN.C: 315: beep(10, 3);
 	movlw	(03h)
 	movwf	(?_beep)
 	movlw	(0Ah)
@@ -1878,7 +1876,7 @@ l7625:
 	line	321
 	
 l7627:	
-;MAIN.C: 321: if(idop==1 && idState == 0){
+;MAIN.C: 321: if (idop == 1 && idState == 0) {
 	decf	(main@idop),w
 	skipz
 	goto	u2111
@@ -1898,7 +1896,7 @@ u2120:
 	line	323
 	
 l7631:	
-;MAIN.C: 323: id_clear(2,5);
+;MAIN.C: 323: id_clear(2, 5);
 	movlw	(05h)
 	movwf	(?_id_clear)
 	movlw	(02h)
@@ -1906,7 +1904,7 @@ l7631:
 	line	324
 	
 l7633:	
-;MAIN.C: 324: setState(3,0);
+;MAIN.C: 324: setState(3, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(03h)
@@ -1914,13 +1912,13 @@ l7633:
 	line	325
 	
 l7635:	
-;MAIN.C: 325: tmp=1;
+;MAIN.C: 325: tmp = 1;
 	clrf	(main@tmp)
 	incf	(main@tmp),f
 	line	326
 	
 l7637:	
-;MAIN.C: 326: beep(10,3);
+;MAIN.C: 326: beep(10, 3);
 	movlw	(03h)
 	movwf	(?_beep)
 	movlw	(0Ah)
@@ -1931,7 +1929,7 @@ l7637:
 	line	329
 	
 l7639:	
-;MAIN.C: 329: else if(idop==2 && idState == 0){
+;MAIN.C: 329: else if (idop == 2 && idState == 0) {
 	movf	(main@idop),w
 	xorlw	02h
 	skipz
@@ -1952,7 +1950,7 @@ u2140:
 	line	331
 	
 l7643:	
-;MAIN.C: 331: id_clear(3,5);
+;MAIN.C: 331: id_clear(3, 5);
 	movlw	(05h)
 	movwf	(?_id_clear)
 	movlw	(03h)
@@ -1960,7 +1958,7 @@ l7643:
 	line	332
 	
 l7645:	
-;MAIN.C: 332: setState(5,0);
+;MAIN.C: 332: setState(5, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(05h)
@@ -1968,13 +1966,13 @@ l7645:
 	line	333
 	
 l7647:	
-;MAIN.C: 333: tmp=2;
+;MAIN.C: 333: tmp = 2;
 	movlw	(02h)
 	movwf	(main@tmp)
 	line	334
 	
 l7649:	
-;MAIN.C: 334: beep(10,2);
+;MAIN.C: 334: beep(10, 2);
 	movlw	(02h)
 	movwf	(?_beep)
 	movlw	(0Ah)
@@ -1983,7 +1981,7 @@ l7649:
 	line	340
 	
 l7651:	
-;MAIN.C: 340: if (idState == 0){
+;MAIN.C: 340: if (idState == 0) {
 	movf	(main@idState),f
 	skipz
 	goto	u2151
@@ -1994,7 +1992,7 @@ u2150:
 	line	347
 	
 l7653:	
-;MAIN.C: 347: if( idop !=1){
+;MAIN.C: 347: if ( idop != 1) {
 	decf	(main@idop),w
 	skipnz
 	goto	u2161
@@ -2010,7 +2008,7 @@ l7655:
 	line	350
 	
 l7657:	
-;MAIN.C: 350: if(tmp <=5){
+;MAIN.C: 350: if (tmp <= 5) {
 	movlw	(06h)
 	subwf	(main@tmp),w
 	skipnc
@@ -2022,7 +2020,7 @@ u2170:
 	line	351
 	
 l7659:	
-;MAIN.C: 351: id_replate(tmp,keyID,buffTag);
+;MAIN.C: 351: id_replate(tmp, keyID, buffTag);
 	movlw	(_keyID)&0ffh
 	movwf	(?_id_replate)
 	movlw	(_buffTag)&0ffh
@@ -2032,14 +2030,14 @@ l7659:
 	line	352
 	
 l7661:	
-;MAIN.C: 352: timeTick=0;
+;MAIN.C: 352: timeTick = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	clrf	(_timeTick)
 	clrf	(_timeTick+1)
 	line	353
 	
 l7663:	
-;MAIN.C: 353: beep(10,1);
+;MAIN.C: 353: beep(10, 1);
 	clrf	(?_beep)
 	incf	(?_beep),f
 	movlw	(0Ah)
@@ -2048,7 +2046,7 @@ l7663:
 	line	359
 	
 l7665:	
-;MAIN.C: 359: beep(10,1);
+;MAIN.C: 359: beep(10, 1);
 	clrf	(?_beep)
 	incf	(?_beep),f
 	movlw	(0Ah)
@@ -2057,7 +2055,7 @@ l7665:
 	line	365
 	
 l7667:	
-;MAIN.C: 365: if(idState == 0){
+;MAIN.C: 365: if (idState == 0) {
 	movf	(main@idState),f
 	skipz
 	goto	u2181
@@ -2068,7 +2066,7 @@ u2180:
 	line	366
 	
 l7669:	
-;MAIN.C: 366: if( idop >2){
+;MAIN.C: 366: if ( idop > 2) {
 	movlw	(03h)
 	subwf	(main@idop),w
 	skipc
@@ -2085,7 +2083,7 @@ l7671:
 	line	369
 	
 l7673:	
-;MAIN.C: 369: if(tmp <=5){
+;MAIN.C: 369: if (tmp <= 5) {
 	movlw	(06h)
 	subwf	(main@tmp),w
 	skipnc
@@ -2097,7 +2095,7 @@ u2200:
 	line	370
 	
 l7675:	
-;MAIN.C: 370: id_replate(tmp,keyID,buffTag);
+;MAIN.C: 370: id_replate(tmp, keyID, buffTag);
 	movlw	(_keyID)&0ffh
 	movwf	(?_id_replate)
 	movlw	(_buffTag)&0ffh
@@ -2107,14 +2105,14 @@ l7675:
 	line	371
 	
 l7677:	
-;MAIN.C: 371: timeTick=0;
+;MAIN.C: 371: timeTick = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	clrf	(_timeTick)
 	clrf	(_timeTick+1)
 	line	372
 	
 l7679:	
-;MAIN.C: 372: beep(10,1);
+;MAIN.C: 372: beep(10, 1);
 	clrf	(?_beep)
 	incf	(?_beep),f
 	movlw	(0Ah)
@@ -2123,7 +2121,7 @@ l7679:
 	line	378
 	
 l7681:	
-;MAIN.C: 378: beep(10,1);
+;MAIN.C: 378: beep(10, 1);
 	clrf	(?_beep)
 	incf	(?_beep),f
 	movlw	(0Ah)
@@ -2180,7 +2178,7 @@ l4191:
 	line	385
 	
 l7687:	
-;MAIN.C: 385: if(mtState != 2) _delay((unsigned long)((61)*(8000000/4000.0)));
+;MAIN.C: 385: if (mtState != 2) _delay((unsigned long)((61)*(8000000/4000.0)));
 	movf	(_mtState),w
 	xorlw	02h
 	skipnz
@@ -2208,13 +2206,13 @@ opt asmopt_on
 	line	388
 	
 l7691:	
-;MAIN.C: 387: else{
-;MAIN.C: 388: idState =0;
+;MAIN.C: 387: else {
+;MAIN.C: 388: idState = 0;
 	clrf	(main@idState)
 	line	389
 	
 l7693:	
-;MAIN.C: 389: if(mtState != 2) _delay((unsigned long)((150)*(8000000/4000.0)));
+;MAIN.C: 389: if (mtState != 2) _delay((unsigned long)((150)*(8000000/4000.0)));
 	movf	(_mtState),w
 	xorlw	02h
 	skipnz
@@ -2246,7 +2244,7 @@ opt asmopt_on
 l4214:	
 	line	394
 ;MAIN.C: 390: }
-;MAIN.C: 394: if((timeOut!=0)&&( timeTick > timeOut)){
+;MAIN.C: 394: if ((timeOut != 0) && ( timeTick > timeOut)) {
 	bcf	status, 5	;RP0=0, select bank0
 	movf	(_timeOut+1),w
 	iorwf	(_timeOut),w
@@ -2275,7 +2273,7 @@ u2240:
 	line	399
 	
 l7701:	
-;MAIN.C: 399: setState(2,15);
+;MAIN.C: 399: setState(2, 15);
 	movlw	0Fh
 	movwf	(?_setState)
 	clrf	(?_setState+1)
@@ -2287,7 +2285,7 @@ l7701:
 	line	403
 	
 l7703:	
-;MAIN.C: 403: setState(6,7);
+;MAIN.C: 403: setState(6, 7);
 	movlw	07h
 	movwf	(?_setState)
 	clrf	(?_setState+1)
@@ -2299,19 +2297,19 @@ l7703:
 	line	406
 	
 l7705:	
-;MAIN.C: 406: setState(2,0);
+;MAIN.C: 406: setState(2, 0);
 	clrf	(?_setState)
 	clrf	(?_setState+1)
 	movlw	(02h)
 	fcall	_setState
 	line	408
-;MAIN.C: 408: eepromWriteByte(0x00,7);
+;MAIN.C: 408: eepromWriteByte(0x00, 7);
 	movlw	(07h)
 	movwf	(?_eepromWriteByte)
 	movlw	(0)
 	fcall	_eepromWriteByte
 	line	409
-;MAIN.C: 409: eepromWriteByte(0x02,0);
+;MAIN.C: 409: eepromWriteByte(0x02, 0);
 	clrf	(?_eepromWriteByte)
 	movlw	(02h)
 	fcall	_eepromWriteByte
@@ -2323,7 +2321,7 @@ l7705:
 	
 l4222:	
 	line	413
-;MAIN.C: 413: if(RC1==1){
+;MAIN.C: 413: if (RC1 == 1) {
 	btfss	(57/8),(57)&7
 	goto	u2251
 	goto	u2250
@@ -2346,7 +2344,7 @@ l7709:
 	line	416
 	
 l7711:	
-;MAIN.C: 416: if(tmp>0&&tmp<4){
+;MAIN.C: 416: if (tmp > 0 && tmp < 4) {
 	movf	(main@tmp),w
 	skipz
 	goto	u2260
@@ -2370,7 +2368,7 @@ l7715:
 	line	418
 	
 l7717:	
-;MAIN.C: 418: eepromWriteByte(0x03+tmp,PwInNum);
+;MAIN.C: 418: eepromWriteByte(0x03 + tmp, PwInNum);
 	movf	(_PwInNum),w
 	movwf	(?_eepromWriteByte)
 	movf	(main@tmp),w
@@ -2380,7 +2378,7 @@ l7717:
 	
 l7719:	
 ;MAIN.C: 419: }
-;MAIN.C: 421: beep(10,1);
+;MAIN.C: 421: beep(10, 1);
 	clrf	(?_beep)
 	incf	(?_beep),f
 	movlw	(0Ah)
@@ -2388,7 +2386,7 @@ l7719:
 	line	422
 	
 l7721:	
-;MAIN.C: 422: setState(7,1);
+;MAIN.C: 422: setState(7, 1);
 	clrf	(?_setState)
 	incf	(?_setState),f
 	clrf	(?_setState+1)
@@ -2428,7 +2426,7 @@ l7725:
 	
 l7727:	
 ;MAIN.C: 442: }
-;MAIN.C: 445: if(mtState==0) RA3 = 1;
+;MAIN.C: 445: if (mtState == 0) RC1 = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	movf	(_mtState),f
 	skipz
@@ -2439,17 +2437,17 @@ u2281:
 u2280:
 	
 l7729:	
-	bsf	(43/8),(43)&7
+	bsf	(57/8),(57)&7
 	goto	l7731
 	line	446
 	
 l4225:	
-;MAIN.C: 446: else RA3 =0;
-	bcf	(43/8),(43)&7
+;MAIN.C: 446: else RC1 = 0;
+	bcf	(57/8),(57)&7
 	line	452
 	
 l7731:	
-;MAIN.C: 452: if(mtState == 2) {
+;MAIN.C: 452: if (mtState == 2) {
 	movf	(_mtState),w
 	xorlw	02h
 	skipz
@@ -2461,7 +2459,7 @@ u2290:
 	line	456
 	
 l7733:	
-;MAIN.C: 456: if(buzFre) t = 1600;
+;MAIN.C: 456: if (buzFre) t = 1600;
 	movf	(main@buzFre),w
 	skipz
 	goto	u2300
@@ -2486,11 +2484,11 @@ l7737:
 	line	460
 	
 l7739:	
-;MAIN.C: 460: RC0 = ~RC0;
-	movlw	1<<((56)&7)
-	xorwf	((56)/8),f
+;MAIN.C: 460: RA3 = ~RA3;
+	movlw	1<<((43)&7)
+	xorwf	((43)/8),f
 	line	461
-;MAIN.C: 461: if(buzFre) {_delay((unsigned long)((480)*(8000000/4000000.0)));}
+;MAIN.C: 461: if (buzFre) {_delay((unsigned long)((480)*(8000000/4000000.0)));}
 	movf	(main@buzFre),w
 	skipz
 	goto	u2310
@@ -2546,7 +2544,7 @@ u2320:
 	
 l7745:	
 ;MAIN.C: 463: }
-;MAIN.C: 464: buzFre =~buzFre;
+;MAIN.C: 464: buzFre = ~buzFre;
 	movlw	(0FFh)
 	xorwf	(main@buzFre),f
 	line	466
@@ -2642,7 +2640,7 @@ _id_clear:
 	movwf	(id_clear@idMin)
 	
 l7497:	
-;MAIN.C: 136: unsigned char tmp[5]={0xff,0xff,0xff,0xff,0xff};
+;MAIN.C: 136: unsigned char tmp[5] = {0xff, 0xff, 0xff, 0xff, 0xff};
 	movlw	(id_clear@tmp)&0ffh
 	movwf	fsr0
 	movf	(id_clear@F1108),w
@@ -2665,7 +2663,7 @@ l7497:
 	line	138
 	
 l7499:	
-;MAIN.C: 138: id_replate(idMin,tmp,buffTag);
+;MAIN.C: 138: id_replate(idMin, tmp, buffTag);
 	movlw	(id_clear@tmp)&0ffh
 	movwf	(?_id_replate)
 	movlw	(_buffTag)&0ffh
@@ -2751,7 +2749,7 @@ _id_replate:
 	line	122
 	
 l7483:	
-;MAIN.C: 122: id=(id-1)*5;
+;MAIN.C: 122: id = (id - 1) * 5;
 	movlw	(05h)
 	movwf	(?___bmul)
 	movf	(id_replate@id),w
@@ -2763,7 +2761,7 @@ l7483:
 l7485:	
 ;MAIN.C: 123: {
 ;MAIN.C: 124: {
-;MAIN.C: 125: *(buff+id) = *Cont;
+;MAIN.C: 125: *(buff + id) = *Cont;
 	movf	(id_replate@Cont),w
 	movwf	fsr0
 	bcf	status, 7	;select IRP bank0
@@ -2779,7 +2777,7 @@ l7485:
 	line	126
 	
 l7487:	
-;MAIN.C: 126: *(buff+1+id) = *(Cont+1);
+;MAIN.C: 126: *(buff + 1 + id) = *(Cont + 1);
 	movf	(id_replate@Cont),w
 	addlw	01h
 	movwf	fsr0
@@ -2796,7 +2794,7 @@ l7487:
 	line	127
 	
 l7489:	
-;MAIN.C: 127: *(buff+2+id) = *(Cont+2);
+;MAIN.C: 127: *(buff + 2 + id) = *(Cont + 2);
 	movf	(id_replate@Cont),w
 	addlw	02h
 	movwf	fsr0
@@ -2813,7 +2811,7 @@ l7489:
 	line	128
 	
 l7491:	
-;MAIN.C: 128: *(buff+3+id) = *(Cont+3);
+;MAIN.C: 128: *(buff + 3 + id) = *(Cont + 3);
 	movf	(id_replate@Cont),w
 	addlw	03h
 	movwf	fsr0
@@ -2830,7 +2828,7 @@ l7491:
 	line	129
 	
 l7493:	
-;MAIN.C: 129: *(buff+4+id) = *(Cont+4);
+;MAIN.C: 129: *(buff + 4 + id) = *(Cont + 4);
 	movf	(id_replate@Cont),w
 	addlw	04h
 	movwf	fsr0
@@ -2849,7 +2847,7 @@ l7493:
 l7495:	
 ;MAIN.C: 130: }
 ;MAIN.C: 131: }
-;MAIN.C: 133: eepromWriteBlock(0x06,buffTag,25);
+;MAIN.C: 133: eepromWriteBlock(0x06, buffTag, 25);
 	movlw	(_buffTag)&0ffh
 	movwf	(?_eepromWriteBlock)
 	movlw	(019h)
@@ -3150,12 +3148,12 @@ _beep:
 	
 l7443:	
 ;MAIN.C: 29: unsigned int t;
-;MAIN.C: 31: while(rep--){
+;MAIN.C: 31: while (rep--) {
 	goto	l7451
 	line	32
 	
 l7445:	
-;MAIN.C: 32: t=25*delay;
+;MAIN.C: 32: t = 25 * delay;
 	bcf	status, 5	;RP0=0, select bank0
 	movf	(beep@delay),w
 	movwf	(?___wmul)
@@ -3169,14 +3167,14 @@ l7445:
 	movf	(0+(?___wmul)),w
 	movwf	(beep@t)
 	line	33
-;MAIN.C: 33: while(t--){
+;MAIN.C: 33: while (t--) {
 	goto	l4130
 	line	34
 	
 l7447:	
-;MAIN.C: 34: RC0 = ~RC0;
-	movlw	1<<((56)&7)
-	xorwf	((56)/8),f
+;MAIN.C: 34: RA3 = ~RA3;
+	movlw	1<<((43)&7)
+	xorwf	((43)/8),f
 	line	35
 ;MAIN.C: 35: _delay((unsigned long)((428)*(8000000/4000000.0)));
 	opt asmopt_off
@@ -3213,8 +3211,8 @@ u1860:
 l4132:	
 	line	38
 ;MAIN.C: 37: }
-;MAIN.C: 38: RC0 =0;
-	bcf	(56/8),(56)&7
+;MAIN.C: 38: RA3 = 0;
+	bcf	(43/8),(43)&7
 	line	39
 	
 l7449:	
@@ -3388,9 +3386,9 @@ _swUartSendByte:
 	
 l7417:	
 ;SWUART.C: 14: unsigned char i;
-;SWUART.C: 16: RA2 = 0;
+;SWUART.C: 16: RA6 = 0;
 	bcf	status, 5	;RP0=0, select bank0
-	bcf	(42/8),(42)&7
+	bcf	(46/8),(46)&7
 	line	18
 	
 l7419:	
@@ -3412,18 +3410,18 @@ l7421:
 	
 l5031:	
 	line	20
-;SWUART.C: 20: RA2 = (dat&1);
+;SWUART.C: 20: RA6 = (dat&1);
 	btfsc	(swUartSendByte@dat),0
 	goto	u1821
 	goto	u1820
 	
 u1821:
 	bcf	status, 5	;RP0=0, select bank0
-	bsf	(42/8),(42)&7
+	bsf	(46/8),(46)&7
 	goto	u1834
 u1820:
 	bcf	status, 5	;RP0=0, select bank0
-	bcf	(42/8),(42)&7
+	bcf	(46/8),(46)&7
 u1834:
 	line	21
 ;SWUART.C: 21: dat=dat>>1;
@@ -3460,9 +3458,9 @@ u1840:
 l5032:	
 	line	29
 ;SWUART.C: 24: }
-;SWUART.C: 29: RA2 = 1;
+;SWUART.C: 29: RA6 = 1;
 	bcf	status, 5	;RP0=0, select bank0
-	bsf	(42/8),(42)&7
+	bsf	(46/8),(46)&7
 	line	31
 	
 l7433:	
@@ -3542,12 +3540,12 @@ _id_search:
 	
 l7397:	
 ;MAIN.C: 114: unsigned char i;
-;MAIN.C: 115: for(i=0;i<21;i+=5){
+;MAIN.C: 115: for (i = 0; i < 21; i += 5) {
 	clrf	(id_search@i)
 	line	116
 	
 l7403:	
-;MAIN.C: 116: if(comArr(id_input,buff+i,5,5))
+;MAIN.C: 116: if (comArr(id_input, buff + i, 5, 5))
 	movf	(id_search@i),w
 	addwf	(id_search@buff),w
 	movwf	(?_comArr)
@@ -3567,7 +3565,7 @@ u1800:
 	line	117
 	
 l7405:	
-;MAIN.C: 117: return i/5 +1;
+;MAIN.C: 117: return i / 5 + 1;
 	movlw	(05h)
 	movwf	(?___lbdiv)
 	movf	(id_search@i),w
@@ -3654,7 +3652,7 @@ _delay_x10ms:
 	line	25
 	
 l7391:	
-;MAIN.C: 25: while(t--)
+;MAIN.C: 25: while (t--)
 	goto	l7395
 	line	26
 	
@@ -5392,7 +5390,7 @@ l7083:
 	line	109
 	
 l7085:	
-;MAIN.C: 109: timeTick =0;
+;MAIN.C: 109: timeTick = 0;
 	clrf	(_timeTick)
 	clrf	(_timeTick+1)
 	line	110
@@ -6139,8 +6137,8 @@ l6967:
 	line	35
 	
 l6969:	
-;sysinit.c: 35: TRISA = 0B01110011;
-	movlw	(073h)
+;sysinit.c: 35: TRISA = 0B00110111;
+	movlw	(037h)
 	bsf	status, 5	;RP0=1, select bank1
 	movwf	(133)^080h	;volatile
 	line	36
@@ -6150,20 +6148,19 @@ l6971:
 	movlw	(080h)
 	movwf	(149)^080h	;volatile
 	line	37
-	
-l6973:	
-;sysinit.c: 37: PORTC = 0B00000010;
-	movlw	(02h)
+;sysinit.c: 37: PORTC = 0B00000000;
 	bcf	status, 5	;RP0=0, select bank0
-	movwf	(7)	;volatile
+	clrf	(7)	;volatile
 	line	38
 	
-l6975:	
-;sysinit.c: 38: TRISC = 0B11111110;
-	movlw	(0FEh)
+l6973:	
+;sysinit.c: 38: TRISC = 0B11111101;
+	movlw	(0FDh)
 	bsf	status, 5	;RP0=1, select bank1
 	movwf	(135)^080h	;volatile
 	line	39
+	
+l6975:	
 ;sysinit.c: 39: WPUC = 0B00000000;
 	clrf	(147)^080h	;volatile
 	line	41

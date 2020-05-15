@@ -32,10 +32,10 @@ void sys_init(void){
 void gpio_init(void){
 
 	PORTA = 0B00000000;
-	TRISA = 0B01110011;  //RA7 RA4 -out
+	TRISA = 0B00110111;  //RA7 RA4 -out
 	WPUA = 0B10000000;   //
-	PORTC = 0B00000010;
-	TRISC = 0B11111110;  //
+	PORTC = 0B00000000;
+	TRISC = 0B11111101;  //
 	WPUC = 0B00000000;   //
 	
 }

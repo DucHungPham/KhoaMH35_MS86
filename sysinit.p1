@@ -1784,18 +1784,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;sysinit.c: 34: PORTA = 0B00000000;
 "34
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;sysinit.c: 35: TRISA = 0B01110011;
+[; ;sysinit.c: 35: TRISA = 0B00110111;
 "35
-[e = _TRISA -> -> 115 `i `uc ]
+[e = _TRISA -> -> 55 `i `uc ]
 [; ;sysinit.c: 36: WPUA = 0B10000000;
 "36
 [e = _WPUA -> -> 128 `i `uc ]
-[; ;sysinit.c: 37: PORTC = 0B00000010;
+[; ;sysinit.c: 37: PORTC = 0B00000000;
 "37
-[e = _PORTC -> -> 2 `i `uc ]
-[; ;sysinit.c: 38: TRISC = 0B11111110;
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;sysinit.c: 38: TRISC = 0B11111101;
 "38
-[e = _TRISC -> -> 254 `i `uc ]
+[e = _TRISC -> -> 253 `i `uc ]
 [; ;sysinit.c: 39: WPUC = 0B00000000;
 "39
 [e = _WPUC -> -> 0 `i `uc ]

@@ -7,7 +7,7 @@
 #define StartBit 3
 #define DataBit 1
 
-#define swTx RA2
+#define swTx RA6
 #define swBR 9600
 
 #define swDelayBit (2000000/swBR) //'2' <=> _XTAL_FREQ=8M; 1<=>_XTAL_FREQ=16M

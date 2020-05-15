@@ -1783,9 +1783,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14
 [v _i `uc  1 a ]
 [; ;SWUART.C: 14: unsigned char i;
-[; ;SWUART.C: 16: RA2 = 0;
+[; ;SWUART.C: 16: RA6 = 0;
 "16
-[e = _RA2 -> -> 0 `i `b ]
+[e = _RA6 -> -> 0 `i `b ]
 [; ;SWUART.C: 18: _delay((unsigned long)(((2000000/9600))*(8000000/4000000.0)));
 "18
 [e ( __delay (1 -> * -> / -> 2000000 `l -> -> 9600 `i `l `d / -> -> 8000000 `l `d .4000000.0 `ul ]
@@ -1797,9 +1797,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 90  ]
 [e :U 89 ]
 {
-[; ;SWUART.C: 20: RA2 = (dat&1);
+[; ;SWUART.C: 20: RA6 = (dat&1);
 "20
-[e = _RA2 -> & -> _dat `i -> 1 `i `b ]
+[e = _RA6 -> & -> _dat `i -> 1 `i `b ]
 [; ;SWUART.C: 21: dat=dat>>1;
 "21
 [e = _dat -> >> -> _dat `i -> 1 `i `uc ]
@@ -1815,9 +1815,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24
 }
 [; ;SWUART.C: 24: }
-[; ;SWUART.C: 29: RA2 = 1;
+[; ;SWUART.C: 29: RA6 = 1;
 "29
-[e = _RA2 -> -> 1 `i `b ]
+[e = _RA6 -> -> 1 `i `b ]
 [; ;SWUART.C: 31: _delay((unsigned long)(((2000000/9600))*(8000000/4000000.0)));
 "31
 [e ( __delay (1 -> * -> / -> 2000000 `l -> -> 9600 `i `l `d / -> -> 8000000 `l `d .4000000.0 `ul ]

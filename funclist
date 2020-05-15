@@ -12,16 +12,16 @@ _SET_EPWM_ON: CODE, 1162 0 31
 _id_search: CODE, 1285 0 27
 _eepromReadBlock: CODE, 1405 0 17
 _eepromWriteBlock: CODE, 1387 0 18
-_swUartSendString: CODE, 1495 0 13
+_swUartSendString: CODE, 1494 0 13
 _comArr: CODE, 1224 0 31
 ___lbdiv: CODE, 1312 0 27
-_setState: CODE, 1520 0 10
+_setState: CODE, 1519 0 10
 _swUartSendByte: CODE, 1062 0 36
-_gpio_init: CODE, 1453 0 15
-_int_init: CODE, 1508 0 12
+_gpio_init: CODE, 1467 0 14
+_int_init: CODE, 1507 0 12
 ___wmul: CODE, 1339 0 25
 _get_RFID: CODE, 592 0 312
 _eepromWriteByte: CODE, 1098 0 33
-___bmul: CODE, 1468 0 14
+___bmul: CODE, 1453 0 14
 _id_clear: CODE, 1131 0 31
-Total: 1439
+Total: 1438

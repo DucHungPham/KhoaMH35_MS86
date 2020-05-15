@@ -19,9 +19,9 @@
 // Timestamp
 
 // GPIO
-#define swMainOut	RA3
+#define swMainOut	RC1 //A3
 
-#define buzzer		RC0
+#define buzzer		RA3//C0
 
 #define w125		RC5
 #define dataIn		RA5

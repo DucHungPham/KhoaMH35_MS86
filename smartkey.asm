@@ -18,12 +18,12 @@
 		LJUMP 	618H 			//0009 	3E18
 		LJUMP 	554H 			//000A 	3D54
 
-		//;MAIN.C: 162: unsigned char idop,tmp,idState=0;
+		//;MAIN.C: 162: unsigned char idop, tmp, idState = 0;
 		CLRR 	59H 			//000B 	0159
 		ORG		000CH
 
 		//;MAIN.C: 163: unsigned char t1;
-		//;MAIN.C: 164: unsigned char buzFre=0;
+		//;MAIN.C: 164: unsigned char buzFre = 0;
 		CLRR 	58H 			//000C 	0158
 		CLRWDT	 			//000D 	0001
 
@@ -31,28 +31,28 @@
 		LCALL 	608H 			//000E 	3608
 
 		//;MAIN.C: 169: gpio_init();
-		LCALL 	5ADH 			//000F 	35AD
+		LCALL 	5BBH 			//000F 	35BB
 
 		//;MAIN.C: 171: timer_init();
 		LCALL 	61FH 			//0010 	361F
 
 		//;MAIN.C: 172: int_init();
-		LCALL 	5E4H 			//0011 	35E4
+		LCALL 	5E3H 			//0011 	35E3
 
-		//;MAIN.C: 178: eepromWriteByte(0xFF,0xAA);
+		//;MAIN.C: 178: eepromWriteByte(0xFF, 0xAA);
 		LDWI 	AAH 			//0012 	2AAA
 		STR 	72H 			//0013 	01F2
 		ORG		0014H
 		LDWI 	FFH 			//0014 	2AFF
 		LCALL 	44AH 			//0015 	344A
 
-		//;MAIN.C: 179: eepromWriteByte(0xFF,0xAA);
+		//;MAIN.C: 179: eepromWriteByte(0xFF, 0xAA);
 		LDWI 	AAH 			//0016 	2AAA
 		STR 	72H 			//0017 	01F2
 		LDWI 	FFH 			//0018 	2AFF
 		LCALL 	44AH 			//0019 	344A
 
-		//;MAIN.C: 182: TRISC &=0xfe;
+		//;MAIN.C: 182: TRISC &= 0xfe;
 		BSR 	STATUS,5 		//001A 	1A83
 		BCR 	7H,0 			//001B 	1007
 		ORG		001CH
@@ -60,7 +60,7 @@
 		//;MAIN.C: 184: SET_EPWM_ON();
 		LCALL 	48AH 			//001C 	348A
 
-		//;MAIN.C: 193: if(eepromReadByte(0x02) == 0xff) eepromWriteByte(0x02,0);
+		//;MAIN.C: 193: if (eepromReadByte(0x02) == 0xff) eepromWriteByte(0x02, 0);
 		LDWI 	2H 			//001D 	2A02
 		LCALL 	610H 			//001E 	3610
 		XORWI 	FFH 			//001F 	26FF
@@ -71,7 +71,7 @@
 		ORG		0024H
 		LCALL 	44AH 			//0024 	344A
 
-		//;MAIN.C: 194: if(eepromReadByte(0x01)==0xff)eepromWriteByte(0x01,0);
+		//;MAIN.C: 194: if (eepromReadByte(0x01) == 0xff)eepromWriteByte(0x01, 0);
 		LDWI 	1H 			//0025 	2A01
 		LCALL 	610H 			//0026 	3610
 		XORWI 	FFH 			//0027 	26FF
@@ -82,7 +82,7 @@
 		ORG		002CH
 		LCALL 	44AH 			//002C 	344A
 
-		//;MAIN.C: 196: if(eepromReadByte(0x06)!=0){
+		//;MAIN.C: 196: if (eepromReadByte(0x06) != 0) {
 		LDWI 	6H 			//002D 	2A06
 		LCALL 	610H 			//002E 	3610
 		XORWI 	0H 			//002F 	2600
@@ -90,30 +90,30 @@
 		LJUMP 	44H 			//0031 	3844
 		LDWI 	6H 			//0032 	2A06
 
-		//;MAIN.C: 200: eepromWriteByte(0x06,0);
+		//;MAIN.C: 200: eepromWriteByte(0x06, 0);
 		CLRR 	72H 			//0033 	0172
 		ORG		0034H
 		LCALL 	44AH 			//0034 	344A
 		LDWI 	7H 			//0035 	2A07
 
-		//;MAIN.C: 201: eepromWriteByte(0x06+1,0);
+		//;MAIN.C: 201: eepromWriteByte(0x06 + 1, 0);
 		CLRR 	72H 			//0036 	0172
 		LCALL 	44AH 			//0037 	344A
 
-		//;MAIN.C: 202: eepromWriteByte(0x06+2,0x87);
+		//;MAIN.C: 202: eepromWriteByte(0x06 + 2, 0x87);
 		LDWI 	87H 			//0038 	2A87
 		STR 	72H 			//0039 	01F2
 		LDWI 	8H 			//003A 	2A08
 		LCALL 	44AH 			//003B 	344A
 		ORG		003CH
 
-		//;MAIN.C: 203: eepromWriteByte(0x06+3,0x3a);
+		//;MAIN.C: 203: eepromWriteByte(0x06 + 3, 0x3a);
 		LDWI 	3AH 			//003C 	2A3A
 		STR 	72H 			//003D 	01F2
 		LDWI 	9H 			//003E 	2A09
 		LCALL 	44AH 			//003F 	344A
 
-		//;MAIN.C: 204: eepromWriteByte(0x06+4,0xf8);
+		//;MAIN.C: 204: eepromWriteByte(0x06 + 4, 0xf8);
 		LDWI 	F8H 			//0040 	2AF8
 		STR 	72H 			//0041 	01F2
 		LDWI 	AH 			//0042 	2A0A
@@ -121,7 +121,7 @@
 		ORG		0044H
 
 		//;MAIN.C: 206: }
-		//;MAIN.C: 207: eepromReadBlock(0x06,buffTag,5*5);
+		//;MAIN.C: 207: eepromReadBlock(0x06, buffTag, 5 * 5);
 		LDWI 	25H 			//0044 	2A25
 		STR 	74H 			//0045 	01F4
 		LDWI 	19H 			//0046 	2A19
@@ -130,7 +130,7 @@
 		LCALL 	57DH 			//0049 	357D
 
 		//;MAIN.C: 210: {
-		//;MAIN.C: 211: if( eepromReadByte(0x00) == 7){
+		//;MAIN.C: 211: if ( eepromReadByte(0x00) == 7) {
 		LDWI 	0H 			//004A 	2A00
 		LCALL 	610H 			//004B 	3610
 		ORG		004CH
@@ -148,13 +148,13 @@
 		STR 	57H 			//0053 	01D7
 		ORG		0054H
 
-		//;MAIN.C: 215: if(t1 == 3){
+		//;MAIN.C: 215: if (t1 == 3) {
 		XORWI 	3H 			//0054 	2603
 		BTSS 	STATUS,2 		//0055 	1D03
 		LJUMP 	8BH 			//0056 	388B
 
-		//;MAIN.C: 220: if((eepromReadByte(0x03)==8) && (eepromReadByte(0x04)==3)&&(eepromReadByte
-		//+                          (0x05)==3)){
+		//;MAIN.C: 220: if ((eepromReadByte(0x03) == 8) && (eepromReadByte(0x04) == 3) && (eepromR
+		//+                          eadByte(0x05) == 3)) {
 		LDWI 	3H 			//0057 	2A03
 		LCALL 	610H 			//0058 	3610
 		XORWI 	8H 			//0059 	2608
@@ -174,35 +174,35 @@
 		LJUMP 	72H 			//0065 	3872
 		LDWI 	1H 			//0066 	2A01
 
-		//;MAIN.C: 221: eepromWriteByte(0x01,1);
+		//;MAIN.C: 221: eepromWriteByte(0x01, 1);
 		CLRR 	72H 			//0067 	0172
 		INCR	72H,1 			//0068 	09F2
 		LCALL 	44AH 			//0069 	344A
 		LDWI 	0H 			//006A 	2A00
 
-		//;MAIN.C: 222: setState(0,0);
+		//;MAIN.C: 222: setState(0, 0);
 		CLRR 	72H 			//006B 	0172
 		ORG		006CH
 		CLRR 	73H 			//006C 	0173
-		LCALL 	5F0H 			//006D 	35F0
+		LCALL 	5EFH 			//006D 	35EF
 
-		//;MAIN.C: 223: beep(20,2);
+		//;MAIN.C: 223: beep(20, 2);
 		LDWI 	2H 			//006E 	2A02
 		STR 	78H 			//006F 	01F8
 		LDWI 	14H 			//0070 	2A14
 		LJUMP 	7AH 			//0071 	387A
 
 		//;MAIN.C: 224: }
-		//;MAIN.C: 225: else{
-		//;MAIN.C: 226: setState(1,12);
+		//;MAIN.C: 225: else {
+		//;MAIN.C: 226: setState(1, 12);
 		LDWI 	CH 			//0072 	2A0C
 		STR 	72H 			//0073 	01F2
 		ORG		0074H
 		LDWI 	1H 			//0074 	2A01
 		CLRR 	73H 			//0075 	0173
-		LCALL 	5F0H 			//0076 	35F0
+		LCALL 	5EFH 			//0076 	35EF
 
-		//;MAIN.C: 227: beep(10,5);
+		//;MAIN.C: 227: beep(10, 5);
 		LDWI 	5H 			//0077 	2A05
 		STR 	78H 			//0078 	01F8
 		LDWI 	AH 			//0079 	2A0A
@@ -211,35 +211,35 @@
 		ORG		007CH
 
 		//;MAIN.C: 228: }
-		//;MAIN.C: 230: eepromWriteByte(0x00,0);
+		//;MAIN.C: 230: eepromWriteByte(0x00, 0);
 		CLRR 	72H 			//007C 	0172
 		LCALL 	44AH 			//007D 	344A
 		LDWI 	2H 			//007E 	2A02
 
-		//;MAIN.C: 231: eepromWriteByte(0x02,0);
+		//;MAIN.C: 231: eepromWriteByte(0x02, 0);
 		CLRR 	72H 			//007F 	0172
 		LCALL 	44AH 			//0080 	344A
 		LDWI 	5H 			//0081 	2A05
 
-		//;MAIN.C: 232: eepromWriteByte(0x05,0);
+		//;MAIN.C: 232: eepromWriteByte(0x05, 0);
 		CLRR 	72H 			//0082 	0172
 		LCALL 	44AH 			//0083 	344A
 		ORG		0084H
 		LDWI 	4H 			//0084 	2A04
 
-		//;MAIN.C: 233: eepromWriteByte(0x04,0);
+		//;MAIN.C: 233: eepromWriteByte(0x04, 0);
 		CLRR 	72H 			//0085 	0172
 		LCALL 	44AH 			//0086 	344A
 		LDWI 	3H 			//0087 	2A03
 
-		//;MAIN.C: 234: eepromWriteByte(0x03,0);
+		//;MAIN.C: 234: eepromWriteByte(0x03, 0);
 		CLRR 	72H 			//0088 	0172
 		LCALL 	44AH 			//0089 	344A
 
 		//;MAIN.C: 236: }
 		LJUMP 	9FH 			//008A 	389F
 
-		//;MAIN.C: 237: else{
+		//;MAIN.C: 237: else {
 		//;MAIN.C: 238: tmp = eepromReadByte(0x02) ;
 		LDWI 	2H 			//008B 	2A02
 		ORG		008CH
@@ -250,7 +250,7 @@
 		//;MAIN.C: 239: tmp++;
 		INCR	5BH,1 			//008F 	09DB
 
-		//;MAIN.C: 240: eepromWriteByte(0x02,tmp);
+		//;MAIN.C: 240: eepromWriteByte(0x02, tmp);
 		LDR 	5BH,0 			//0090 	085B
 		STR 	72H 			//0091 	01F2
 		LDWI 	2H 			//0092 	2A02
@@ -258,24 +258,24 @@
 		ORG		0094H
 		LDWI 	7H 			//0094 	2A07
 
-		//;MAIN.C: 241: PwInNum=0;
+		//;MAIN.C: 241: PwInNum = 0;
 		BCR 	STATUS,5 		//0095 	1283
 		CLRR 	60H 			//0096 	0160
 		CLRR 	72H 			//0097 	0172
 		INCR	72H,1 			//0098 	09F2
 		LJUMP 	9DH 			//0099 	389D
 
-		//;MAIN.C: 246: else{
-		//;MAIN.C: 247: setState(1,12);
+		//;MAIN.C: 246: else {
+		//;MAIN.C: 247: setState(1, 12);
 		LDWI 	CH 			//009A 	2A0C
 		STR 	72H 			//009B 	01F2
 		ORG		009CH
 		LDWI 	1H 			//009C 	2A01
 		CLRR 	73H 			//009D 	0173
-		LCALL 	5F0H 			//009E 	35F0
+		LCALL 	5EFH 			//009E 	35EF
 
 		//;MAIN.C: 248: }
-		//;MAIN.C: 250: if(eepromReadByte(0x01)== 1){
+		//;MAIN.C: 250: if (eepromReadByte(0x01) == 1) {
 		LDWI 	1H 			//009F 	2A01
 		LCALL 	610H 			//00A0 	3610
 		XORWI 	1H 			//00A1 	2601
@@ -284,14 +284,14 @@
 		ORG		00A4H
 		LDWI 	0H 			//00A4 	2A00
 
-		//;MAIN.C: 251: setState(0,0);
+		//;MAIN.C: 251: setState(0, 0);
 		CLRR 	72H 			//00A5 	0172
 		CLRR 	73H 			//00A6 	0173
-		LCALL 	5F0H 			//00A7 	35F0
+		LCALL 	5EFH 			//00A7 	35EF
 
 		//;MAIN.C: 252: }
 		//;MAIN.C: 253: }
-		//;MAIN.C: 258: tmp=0;
+		//;MAIN.C: 258: tmp = 0;
 		BCR 	STATUS,5 		//00A8 	1283
 		CLRR 	5BH 			//00A9 	015B
 
@@ -300,14 +300,14 @@
 		STR 	5AH 			//00AB 	01DA
 		ORG		00ACH
 
-		//;MAIN.C: 265: if(idop){
+		//;MAIN.C: 265: if (idop) {
 		LDR 	5AH,0 			//00AC 	085A
 		BTSC 	STATUS,2 		//00AD 	1503
 		LJUMP 	1A5H 			//00AE 	39A5
 
 		//;MAIN.C: 266: swUartSendString("\nTag: ");
 		LDWI 	1H 			//00AF 	2A01
-		LCALL 	5D7H 			//00B0 	35D7
+		LCALL 	5D6H 			//00B0 	35D6
 
 		//;MAIN.C: 268: SendNum(keyID[1]);
 		BCR 	STATUS,5 		//00B1 	1283
@@ -331,19 +331,19 @@
 		ORG		00BCH
 		LCALL 	400H 			//00BC 	3400
 
-		//;MAIN.C: 272: idop = id_search(keyID,buffTag);
+		//;MAIN.C: 272: idop = id_search(keyID, buffTag);
 		LDWI 	25H 			//00BD 	2A25
 		STR 	7AH 			//00BE 	01FA
 		LDWI 	62H 			//00BF 	2A62
 		LCALL 	505H 			//00C0 	3505
 		STR 	5AH 			//00C1 	01DA
 
-		//;MAIN.C: 273: switch (mtState){
+		//;MAIN.C: 273: switch (mtState) {
 		LJUMP 	189H 			//00C2 	3989
 
 		//;MAIN.C: 276: case 1:
 		//;MAIN.C: 277: case 2:
-		//;MAIN.C: 279: if((idop>1) && (idop <6))
+		//;MAIN.C: 279: if ((idop > 1) && (idop < 6))
 		LDWI 	2H 			//00C3 	2A02
 		ORG		00C4H
 		SUBWR 	5AH,0 			//00C4 	0C5A
@@ -355,7 +355,7 @@
 		LJUMP 	EDH 			//00CA 	38ED
 
 		//;MAIN.C: 280: {
-		//;MAIN.C: 281: if( eepromReadByte(0x00) == 7) eepromWriteByte(0x00,0);
+		//;MAIN.C: 281: if ( eepromReadByte(0x00) == 7) eepromWriteByte(0x00, 0);
 		LDWI 	0H 			//00CB 	2A00
 		ORG		00CCH
 		LCALL 	610H 			//00CC 	3610
@@ -366,7 +366,7 @@
 		CLRR 	72H 			//00D1 	0172
 		LCALL 	44AH 			//00D2 	344A
 
-		//;MAIN.C: 282: if(mtState==7){
+		//;MAIN.C: 282: if (mtState == 7) {
 		BCR 	STATUS,5 		//00D3 	1283
 		ORG		00D4H
 		LDR 	61H,0 			//00D4 	0861
@@ -375,36 +375,36 @@
 		LJUMP 	E4H 			//00D7 	38E4
 		LDWI 	2H 			//00D8 	2A02
 
-		//;MAIN.C: 283: eepromWriteByte(0x02,0);
+		//;MAIN.C: 283: eepromWriteByte(0x02, 0);
 		CLRR 	72H 			//00D9 	0172
 		LCALL 	44AH 			//00DA 	344A
 		LDWI 	5H 			//00DB 	2A05
 		ORG		00DCH
 
-		//;MAIN.C: 284: eepromWriteByte(0x05,0);
+		//;MAIN.C: 284: eepromWriteByte(0x05, 0);
 		CLRR 	72H 			//00DC 	0172
 		LCALL 	44AH 			//00DD 	344A
 		LDWI 	4H 			//00DE 	2A04
 
-		//;MAIN.C: 285: eepromWriteByte(0x04,0);
+		//;MAIN.C: 285: eepromWriteByte(0x04, 0);
 		CLRR 	72H 			//00DF 	0172
 		LCALL 	44AH 			//00E0 	344A
 		LDWI 	3H 			//00E1 	2A03
 
-		//;MAIN.C: 286: eepromWriteByte(0x03,0);
+		//;MAIN.C: 286: eepromWriteByte(0x03, 0);
 		CLRR 	72H 			//00E2 	0172
 		LCALL 	44AH 			//00E3 	344A
 		ORG		00E4H
 		LDWI 	0H 			//00E4 	2A00
 
 		//;MAIN.C: 287: }
-		//;MAIN.C: 288: setState(0,0);
+		//;MAIN.C: 288: setState(0, 0);
 		CLRR 	72H 			//00E5 	0172
 		CLRR 	73H 			//00E6 	0173
-		LCALL 	5F0H 			//00E7 	35F0
+		LCALL 	5EFH 			//00E7 	35EF
 		LDWI 	AH 			//00E8 	2A0A
 
-		//;MAIN.C: 289: beep(10,1);
+		//;MAIN.C: 289: beep(10, 1);
 		CLRR 	78H 			//00E9 	0178
 		INCR	78H,1 			//00EA 	09F8
 		LCALL 	3D5H 			//00EB 	33D5
@@ -413,12 +413,12 @@
 		//;MAIN.C: 290: }
 		LJUMP 	194H 			//00EC 	3994
 
-		//;MAIN.C: 292: else if(idop==1)
+		//;MAIN.C: 292: else if (idop == 1)
 		DECRSZ 	5AH,0 		//00ED 	0E5A
 		LJUMP 	194H 			//00EE 	3994
 
 		//;MAIN.C: 293: {
-		//;MAIN.C: 295: id_clear(2,5);
+		//;MAIN.C: 295: id_clear(2, 5);
 		LDWI 	5H 			//00EF 	2A05
 		STR 	42H 			//00F0 	01C2
 		LDWI 	2H 			//00F1 	2A02
@@ -426,24 +426,24 @@
 		LDWI 	3H 			//00F3 	2A03
 		ORG		00F4H
 
-		//;MAIN.C: 296: setState(3,0);
+		//;MAIN.C: 296: setState(3, 0);
 		CLRR 	72H 			//00F4 	0172
 		CLRR 	73H 			//00F5 	0173
-		LCALL 	5F0H 			//00F6 	35F0
+		LCALL 	5EFH 			//00F6 	35EF
 		LDWI 	3H 			//00F7 	2A03
 
-		//;MAIN.C: 297: tmp=1;
+		//;MAIN.C: 297: tmp = 1;
 		CLRR 	5BH 			//00F8 	015B
 		INCR	5BH,1 			//00F9 	09DB
 
-		//;MAIN.C: 298: beep(10,3);
+		//;MAIN.C: 298: beep(10, 3);
 		STR 	78H 			//00FA 	01F8
 		LDWI 	AH 			//00FB 	2A0A
 		ORG		00FCH
 		LCALL 	3D5H 			//00FC 	33D5
 		LJUMP 	194H 			//00FD 	3994
 
-		//;MAIN.C: 304: if(idop<=5 && idop!=1 ){
+		//;MAIN.C: 304: if (idop <= 5 && idop != 1 ) {
 		LDWI 	6H 			//00FE 	2A06
 		SUBWR 	5AH,0 			//00FF 	0C5A
 		BTSC 	STATUS,0 		//0100 	1403
@@ -453,7 +453,7 @@
 		ORG		0104H
 		LJUMP 	112H 			//0104 	3912
 
-		//;MAIN.C: 305: if(eepromReadByte(0x01)==1){
+		//;MAIN.C: 305: if (eepromReadByte(0x01) == 1) {
 		LDWI 	1H 			//0105 	2A01
 		LCALL 	610H 			//0106 	3610
 		XORWI 	1H 			//0107 	2601
@@ -461,48 +461,48 @@
 		LJUMP 	194H 			//0109 	3994
 		LDWI 	1H 			//010A 	2A01
 
-		//;MAIN.C: 306: eepromWriteByte(0x01,0);
+		//;MAIN.C: 306: eepromWriteByte(0x01, 0);
 		CLRR 	72H 			//010B 	0172
 		ORG		010CH
 		LCALL 	44AH 			//010C 	344A
 
-		//;MAIN.C: 307: beep(10,2);
+		//;MAIN.C: 307: beep(10, 2);
 		LDWI 	2H 			//010D 	2A02
 		STR 	78H 			//010E 	01F8
 		LDWI 	AH 			//010F 	2A0A
 		LCALL 	3D5H 			//0110 	33D5
 		LJUMP 	194H 			//0111 	3994
 
-		//;MAIN.C: 311: else if(idop==1){
+		//;MAIN.C: 311: else if (idop == 1) {
 		DECRSZ 	5AH,0 		//0112 	0E5A
 		LJUMP 	194H 			//0113 	3994
 		ORG		0114H
 
-		//;MAIN.C: 312: id_clear(2,5);
+		//;MAIN.C: 312: id_clear(2, 5);
 		LDWI 	5H 			//0114 	2A05
 		STR 	42H 			//0115 	01C2
 		LDWI 	2H 			//0116 	2A02
 		LCALL 	46BH 			//0117 	346B
 		LDWI 	3H 			//0118 	2A03
 
-		//;MAIN.C: 313: setState(3,0);
+		//;MAIN.C: 313: setState(3, 0);
 		CLRR 	72H 			//0119 	0172
 		CLRR 	73H 			//011A 	0173
-		LCALL 	5F0H 			//011B 	35F0
+		LCALL 	5EFH 			//011B 	35EF
 		ORG		011CH
 		LDWI 	3H 			//011C 	2A03
 
-		//;MAIN.C: 314: tmp=1;
+		//;MAIN.C: 314: tmp = 1;
 		CLRR 	5BH 			//011D 	015B
 		INCR	5BH,1 			//011E 	09DB
 
-		//;MAIN.C: 315: beep(10,3);
+		//;MAIN.C: 315: beep(10, 3);
 		STR 	78H 			//011F 	01F8
 		LDWI 	AH 			//0120 	2A0A
 		LCALL 	3D5H 			//0121 	33D5
 		LJUMP 	194H 			//0122 	3994
 
-		//;MAIN.C: 321: if(idop==1 && idState == 0){
+		//;MAIN.C: 321: if (idop == 1 && idState == 0) {
 		DECRSZ 	5AH,0 		//0123 	0E5A
 		ORG		0124H
 		LJUMP 	137H 			//0124 	3937
@@ -510,7 +510,7 @@
 		BTSS 	STATUS,2 		//0126 	1D03
 		LJUMP 	137H 			//0127 	3937
 
-		//;MAIN.C: 323: id_clear(2,5);
+		//;MAIN.C: 323: id_clear(2, 5);
 		LDWI 	5H 			//0128 	2A05
 		STR 	42H 			//0129 	01C2
 		LDWI 	2H 			//012A 	2A02
@@ -518,17 +518,17 @@
 		ORG		012CH
 		LDWI 	3H 			//012C 	2A03
 
-		//;MAIN.C: 324: setState(3,0);
+		//;MAIN.C: 324: setState(3, 0);
 		CLRR 	72H 			//012D 	0172
 		CLRR 	73H 			//012E 	0173
-		LCALL 	5F0H 			//012F 	35F0
+		LCALL 	5EFH 			//012F 	35EF
 		LDWI 	3H 			//0130 	2A03
 
-		//;MAIN.C: 325: tmp=1;
+		//;MAIN.C: 325: tmp = 1;
 		CLRR 	5BH 			//0131 	015B
 		INCR	5BH,1 			//0132 	09DB
 
-		//;MAIN.C: 326: beep(10,3);
+		//;MAIN.C: 326: beep(10, 3);
 		STR 	78H 			//0133 	01F8
 		ORG		0134H
 		LDWI 	AH 			//0134 	2A0A
@@ -537,7 +537,7 @@
 		//;MAIN.C: 327: }
 		LJUMP 	194H 			//0136 	3994
 
-		//;MAIN.C: 329: else if(idop==2 && idState == 0){
+		//;MAIN.C: 329: else if (idop == 2 && idState == 0) {
 		LDR 	5AH,0 			//0137 	085A
 		XORWI 	2H 			//0138 	2602
 		BTSS 	STATUS,2 		//0139 	1D03
@@ -547,36 +547,36 @@
 		BTSS 	STATUS,2 		//013C 	1D03
 		LJUMP 	194H 			//013D 	3994
 
-		//;MAIN.C: 331: id_clear(3,5);
+		//;MAIN.C: 331: id_clear(3, 5);
 		LDWI 	5H 			//013E 	2A05
 		STR 	42H 			//013F 	01C2
 		LDWI 	3H 			//0140 	2A03
 		LCALL 	46BH 			//0141 	346B
 		LDWI 	5H 			//0142 	2A05
 
-		//;MAIN.C: 332: setState(5,0);
+		//;MAIN.C: 332: setState(5, 0);
 		CLRR 	72H 			//0143 	0172
 		ORG		0144H
 		CLRR 	73H 			//0144 	0173
-		LCALL 	5F0H 			//0145 	35F0
+		LCALL 	5EFH 			//0145 	35EF
 
-		//;MAIN.C: 333: tmp=2;
+		//;MAIN.C: 333: tmp = 2;
 		LDWI 	2H 			//0146 	2A02
 		STR 	5BH 			//0147 	01DB
 
-		//;MAIN.C: 334: beep(10,2);
+		//;MAIN.C: 334: beep(10, 2);
 		STR 	78H 			//0148 	01F8
 		LDWI 	AH 			//0149 	2A0A
 		LCALL 	3D5H 			//014A 	33D5
 		LJUMP 	194H 			//014B 	3994
 		ORG		014CH
 
-		//;MAIN.C: 340: if (idState == 0){
+		//;MAIN.C: 340: if (idState == 0) {
 		LDR 	59H,1 			//014C 	08D9
 		BTSS 	STATUS,2 		//014D 	1D03
 		LJUMP 	165H 			//014E 	3965
 
-		//;MAIN.C: 347: if( idop !=1){
+		//;MAIN.C: 347: if ( idop != 1) {
 		DECR 	5AH,0 			//014F 	0D5A
 		BTSC 	STATUS,2 		//0150 	1503
 		LJUMP 	194H 			//0151 	3994
@@ -586,12 +586,12 @@
 		INCR	5BH,1 			//0153 	09DB
 		ORG		0154H
 
-		//;MAIN.C: 350: if(tmp <=5){
+		//;MAIN.C: 350: if (tmp <= 5) {
 		SUBWR 	5BH,0 			//0154 	0C5B
 		BTSC 	STATUS,0 		//0155 	1403
 		LJUMP 	194H 			//0156 	3994
 
-		//;MAIN.C: 351: id_replate(tmp,keyID,buffTag);
+		//;MAIN.C: 351: id_replate(tmp, keyID, buffTag);
 		LDWI 	62H 			//0157 	2A62
 		STR 	3EH 			//0158 	01BE
 		LDWI 	25H 			//0159 	2A25
@@ -601,7 +601,7 @@
 		LCALL 	39AH 			//015C 	339A
 		LDWI 	AH 			//015D 	2A0A
 
-		//;MAIN.C: 352: timeTick=0;
+		//;MAIN.C: 352: timeTick = 0;
 		BCR 	STATUS,5 		//015E 	1283
 		CLRR 	5EH 			//015F 	015E
 		CLRR 	5FH 			//0160 	015F
@@ -612,19 +612,19 @@
 		LJUMP 	194H 			//0164 	3994
 		LDWI 	AH 			//0165 	2A0A
 
-		//;MAIN.C: 359: beep(10,1);
+		//;MAIN.C: 359: beep(10, 1);
 		CLRR 	78H 			//0166 	0178
 		INCR	78H,1 			//0167 	09F8
 		LCALL 	3D5H 			//0168 	33D5
 		LJUMP 	194H 			//0169 	3994
 
-		//;MAIN.C: 365: if(idState == 0){
+		//;MAIN.C: 365: if (idState == 0) {
 		LDR 	59H,1 			//016A 	08D9
 		BTSS 	STATUS,2 		//016B 	1D03
 		ORG		016CH
 		LJUMP 	184H 			//016C 	3984
 
-		//;MAIN.C: 366: if( idop >2){
+		//;MAIN.C: 366: if ( idop > 2) {
 		LDWI 	3H 			//016D 	2A03
 		SUBWR 	5AH,0 			//016E 	0C5A
 		BTSS 	STATUS,0 		//016F 	1C03
@@ -634,13 +634,13 @@
 		//;MAIN.C: 367: tmp++;
 		INCR	5BH,1 			//0172 	09DB
 
-		//;MAIN.C: 369: if(tmp <=5){
+		//;MAIN.C: 369: if (tmp <= 5) {
 		SUBWR 	5BH,0 			//0173 	0C5B
 		ORG		0174H
 		BTSC 	STATUS,0 		//0174 	1403
 		LJUMP 	194H 			//0175 	3994
 
-		//;MAIN.C: 370: id_replate(tmp,keyID,buffTag);
+		//;MAIN.C: 370: id_replate(tmp, keyID, buffTag);
 		LDWI 	62H 			//0176 	2A62
 		STR 	3EH 			//0177 	01BE
 		LDWI 	25H 			//0178 	2A25
@@ -650,7 +650,7 @@
 		ORG		017CH
 		LDWI 	AH 			//017C 	2A0A
 
-		//;MAIN.C: 371: timeTick=0;
+		//;MAIN.C: 371: timeTick = 0;
 		BCR 	STATUS,5 		//017D 	1283
 		CLRR 	5EH 			//017E 	015E
 		CLRR 	5FH 			//017F 	015F
@@ -661,7 +661,7 @@
 		ORG		0184H
 		LDWI 	AH 			//0184 	2A0A
 
-		//;MAIN.C: 378: beep(10,1);
+		//;MAIN.C: 378: beep(10, 1);
 		CLRR 	78H 			//0185 	0178
 		INCR	78H,1 			//0186 	09F8
 		LCALL 	3D5H 			//0187 	33D5
@@ -685,7 +685,7 @@
 		CLRR 	59H 			//0195 	0159
 		INCR	59H,1 			//0196 	09D9
 
-		//;MAIN.C: 385: if(mtState != 2) _delay((unsigned long)((61)*(8000000/4000.0)));
+		//;MAIN.C: 385: if (mtState != 2) _delay((unsigned long)((61)*(8000000/4000.0)));
 		LDR 	61H,0 			//0197 	0861
 		XORWI 	2H 			//0198 	2602
 		BTSC 	STATUS,2 		//0199 	1503
@@ -703,11 +703,11 @@
 		ORG		01A4H
 		LJUMP 	1B6H 			//01A4 	39B6
 
-		//;MAIN.C: 387: else{
-		//;MAIN.C: 388: idState =0;
+		//;MAIN.C: 387: else {
+		//;MAIN.C: 388: idState = 0;
 		CLRR 	59H 			//01A5 	0159
 
-		//;MAIN.C: 389: if(mtState != 2) _delay((unsigned long)((150)*(8000000/4000.0)));
+		//;MAIN.C: 389: if (mtState != 2) _delay((unsigned long)((150)*(8000000/4000.0)));
 		LDR 	61H,0 			//01A6 	0861
 		XORWI 	2H 			//01A7 	2602
 		BTSC 	STATUS,2 		//01A8 	1503
@@ -728,7 +728,7 @@
 		LJUMP 	1B0H 			//01B5 	39B0
 
 		//;MAIN.C: 390: }
-		//;MAIN.C: 394: if((timeOut!=0)&&( timeTick > timeOut)){
+		//;MAIN.C: 394: if ((timeOut != 0) && ( timeTick > timeOut)) {
 		BCR 	STATUS,5 		//01B6 	1283
 		LDR 	5DH,0 			//01B7 	085D
 		IORWR 	5CH,0 			//01B8 	035C
@@ -746,42 +746,42 @@
 		LJUMP 	208H 			//01C3 	3A08
 		ORG		01C4H
 
-		//;MAIN.C: 399: setState(2,15);
+		//;MAIN.C: 399: setState(2, 15);
 		LDWI 	FH 			//01C4 	2A0F
 		STR 	72H 			//01C5 	01F2
 		LDWI 	2H 			//01C6 	2A02
 		CLRR 	73H 			//01C7 	0173
-		LCALL 	5F0H 			//01C8 	35F0
+		LCALL 	5EFH 			//01C8 	35EF
 
 		//;MAIN.C: 401: break;
 		LJUMP 	208H 			//01C9 	3A08
 
-		//;MAIN.C: 403: setState(6,7);
+		//;MAIN.C: 403: setState(6, 7);
 		LDWI 	7H 			//01CA 	2A07
 		STR 	72H 			//01CB 	01F2
 		ORG		01CCH
 		LDWI 	6H 			//01CC 	2A06
 		CLRR 	73H 			//01CD 	0173
-		LCALL 	5F0H 			//01CE 	35F0
+		LCALL 	5EFH 			//01CE 	35EF
 
 		//;MAIN.C: 404: break;
 		LJUMP 	208H 			//01CF 	3A08
 		LDWI 	2H 			//01D0 	2A02
 
-		//;MAIN.C: 406: setState(2,0);
+		//;MAIN.C: 406: setState(2, 0);
 		CLRR 	72H 			//01D1 	0172
 		CLRR 	73H 			//01D2 	0173
-		LCALL 	5F0H 			//01D3 	35F0
+		LCALL 	5EFH 			//01D3 	35EF
 		ORG		01D4H
 
-		//;MAIN.C: 408: eepromWriteByte(0x00,7);
+		//;MAIN.C: 408: eepromWriteByte(0x00, 7);
 		LDWI 	7H 			//01D4 	2A07
 		STR 	72H 			//01D5 	01F2
 		LDWI 	0H 			//01D6 	2A00
 		LCALL 	44AH 			//01D7 	344A
 		LDWI 	2H 			//01D8 	2A02
 
-		//;MAIN.C: 409: eepromWriteByte(0x02,0);
+		//;MAIN.C: 409: eepromWriteByte(0x02, 0);
 		CLRR 	72H 			//01D9 	0172
 		LCALL 	44AH 			//01DA 	344A
 
@@ -790,7 +790,7 @@
 		ORG		01DCH
 
 		//;MAIN.C: 411: case 7:
-		//;MAIN.C: 413: if(RC1==1){
+		//;MAIN.C: 413: if (RC1 == 1) {
 		BTSS 	7H,1 			//01DC 	1C87
 		LJUMP 	208H 			//01DD 	3A08
 		LDWI 	2H 			//01DE 	2A02
@@ -803,7 +803,7 @@
 		BCR 	STATUS,5 		//01E1 	1283
 		STR 	5BH 			//01E2 	01DB
 
-		//;MAIN.C: 416: if(tmp>0&&tmp<4){
+		//;MAIN.C: 416: if (tmp > 0 && tmp < 4) {
 		LDR 	5BH,0 			//01E3 	085B
 		ORG		01E4H
 		BTSC 	STATUS,2 		//01E4 	1503
@@ -816,7 +816,7 @@
 		//;MAIN.C: 417: tmp--;
 		DECR 	5BH,1 			//01EA 	0DDB
 
-		//;MAIN.C: 418: eepromWriteByte(0x03+tmp,PwInNum);
+		//;MAIN.C: 418: eepromWriteByte(0x03 + tmp, PwInNum);
 		LDR 	60H,0 			//01EB 	0860
 		ORG		01ECH
 		STR 	72H 			//01EC 	01F2
@@ -826,18 +826,18 @@
 		LDWI 	AH 			//01F0 	2A0A
 
 		//;MAIN.C: 419: }
-		//;MAIN.C: 421: beep(10,1);
+		//;MAIN.C: 421: beep(10, 1);
 		CLRR 	78H 			//01F1 	0178
 		INCR	78H,1 			//01F2 	09F8
 		LCALL 	3D5H 			//01F3 	33D5
 		ORG		01F4H
 		LDWI 	7H 			//01F4 	2A07
 
-		//;MAIN.C: 422: setState(7,1);
+		//;MAIN.C: 422: setState(7, 1);
 		CLRR 	72H 			//01F5 	0172
 		INCR	72H,1 			//01F6 	09F2
 		CLRR 	73H 			//01F7 	0173
-		LCALL 	5F0H 			//01F8 	35F0
+		LCALL 	5EFH 			//01F8 	35EF
 		LJUMP 	208H 			//01F9 	3A08
 		LDR 	61H,0 			//01FA 	0861
 		XORWI 	1H 			//01FB 	2601
@@ -857,25 +857,25 @@
 		LJUMP 	208H 			//0207 	3A08
 
 		//;MAIN.C: 442: }
-		//;MAIN.C: 445: if(mtState==0) RA3 = 1;
+		//;MAIN.C: 445: if (mtState == 0) RC1 = 1;
 		BCR 	STATUS,5 		//0208 	1283
 		LDR 	61H,1 			//0209 	08E1
 		BTSS 	STATUS,2 		//020A 	1D03
 		LJUMP 	20EH 			//020B 	3A0E
 		ORG		020CH
-		BSR 	5H,3 			//020C 	1985
+		BSR 	7H,1 			//020C 	1887
 		LJUMP 	20FH 			//020D 	3A0F
 
-		//;MAIN.C: 446: else RA3 =0;
-		BCR 	5H,3 			//020E 	1185
+		//;MAIN.C: 446: else RC1 = 0;
+		BCR 	7H,1 			//020E 	1087
 
-		//;MAIN.C: 452: if(mtState == 2) {
+		//;MAIN.C: 452: if (mtState == 2) {
 		LDR 	61H,0 			//020F 	0861
 		XORWI 	2H 			//0210 	2602
 		BTSS 	STATUS,2 		//0211 	1D03
 		LJUMP 	23EH 			//0212 	3A3E
 
-		//;MAIN.C: 456: if(buzFre) t = 1600;
+		//;MAIN.C: 456: if (buzFre) t = 1600;
 		LDR 	58H,0 			//0213 	0858
 		ORG		0214H
 		BTSC 	STATUS,2 		//0214 	1503
@@ -905,12 +905,12 @@
 		BTSC 	STATUS,2 		//0228 	1503
 		LJUMP 	23BH 			//0229 	3A3B
 
-		//;MAIN.C: 460: RC0 = ~RC0;
-		LDWI 	1H 			//022A 	2A01
-		XORWR 	7H,1 			//022B 	0487
+		//;MAIN.C: 460: RA3 = ~RA3;
+		LDWI 	8H 			//022A 	2A08
+		XORWR 	5H,1 			//022B 	0485
 		ORG		022CH
 
-		//;MAIN.C: 461: if(buzFre) {_delay((unsigned long)((480)*(8000000/4000000.0)));}
+		//;MAIN.C: 461: if (buzFre) {_delay((unsigned long)((480)*(8000000/4000000.0)));}
 		LDR 	58H,0 			//022C 	0858
 		BTSC 	STATUS,2 		//022D 	1503
 		LJUMP 	236H 			//022E 	3A36
@@ -931,7 +931,7 @@
 		LJUMP 	21EH 			//023A 	3A1E
 
 		//;MAIN.C: 463: }
-		//;MAIN.C: 464: buzFre =~buzFre;
+		//;MAIN.C: 464: buzFre = ~buzFre;
 		LDWI 	FFH 			//023B 	2AFF
 		ORG		023CH
 		XORWR 	58H,1 			//023C 	04D8
@@ -1520,18 +1520,18 @@
 		RET		 					//0399 	0004
 		STR 	7BH 			//039A 	01FB
 
-		//;MAIN.C: 122: id=(id-1)*5;
+		//;MAIN.C: 122: id = (id - 1) * 5;
 		LDWI 	5H 			//039B 	2A05
 		ORG		039CH
 		STR 	72H 			//039C 	01F2
 		LDR 	7BH,0 			//039D 	087B
 		ADDWI 	FFH 			//039E 	27FF
-		LCALL 	5BCH 			//039F 	35BC
+		LCALL 	5ADH 			//039F 	35AD
 		STR 	7BH 			//03A0 	01FB
 
 		//;MAIN.C: 123: {
 		//;MAIN.C: 124: {
-		//;MAIN.C: 125: *(buff+id) = *Cont;
+		//;MAIN.C: 125: *(buff + id) = *Cont;
 		LDR 	3EH,0 			//03A1 	083E
 		STR 	FSR 			//03A2 	0184
 		BCR 	STATUS,7 		//03A3 	1383
@@ -1546,7 +1546,7 @@
 		STR 	INDF 			//03AB 	0180
 		ORG		03ACH
 
-		//;MAIN.C: 126: *(buff+1+id) = *(Cont+1);
+		//;MAIN.C: 126: *(buff + 1 + id) = *(Cont + 1);
 		LDR 	3EH,0 			//03AC 	083E
 		ADDWI 	1H 			//03AD 	2701
 		LCALL 	3CEH 			//03AE 	33CE
@@ -1555,7 +1555,7 @@
 		LDR 	40H,0 			//03B1 	0840
 		STR 	INDF 			//03B2 	0180
 
-		//;MAIN.C: 127: *(buff+2+id) = *(Cont+2);
+		//;MAIN.C: 127: *(buff + 2 + id) = *(Cont + 2);
 		LDR 	3EH,0 			//03B3 	083E
 		ORG		03B4H
 		ADDWI 	2H 			//03B4 	2702
@@ -1565,7 +1565,7 @@
 		LDR 	40H,0 			//03B8 	0840
 		STR 	INDF 			//03B9 	0180
 
-		//;MAIN.C: 128: *(buff+3+id) = *(Cont+3);
+		//;MAIN.C: 128: *(buff + 3 + id) = *(Cont + 3);
 		LDR 	3EH,0 			//03BA 	083E
 		ADDWI 	3H 			//03BB 	2703
 		ORG		03BCH
@@ -1575,7 +1575,7 @@
 		LDR 	40H,0 			//03BF 	0840
 		STR 	INDF 			//03C0 	0180
 
-		//;MAIN.C: 129: *(buff+4+id) = *(Cont+4);
+		//;MAIN.C: 129: *(buff + 4 + id) = *(Cont + 4);
 		LDR 	3EH,0 			//03C1 	083E
 		ADDWI 	4H 			//03C2 	2704
 		LCALL 	3CEH 			//03C3 	33CE
@@ -1587,7 +1587,7 @@
 
 		//;MAIN.C: 130: }
 		//;MAIN.C: 131: }
-		//;MAIN.C: 133: eepromWriteBlock(0x06,buffTag,25);
+		//;MAIN.C: 133: eepromWriteBlock(0x06, buffTag, 25);
 		LDWI 	25H 			//03C8 	2A25
 		STR 	76H 			//03C9 	01F6
 		LDWI 	19H 			//03CA 	2A19
@@ -1607,7 +1607,7 @@
 		STR 	40H 			//03D6 	01C0
 
 		//;MAIN.C: 29: unsigned int t;
-		//;MAIN.C: 31: while(rep--){
+		//;MAIN.C: 31: while (rep--) {
 		DECR 	78H,1 			//03D7 	0DF8
 		LDR 	78H,0 			//03D8 	0878
 		XORWI 	FFH 			//03D9 	26FF
@@ -1615,7 +1615,7 @@
 		RET		 					//03DB 	0004
 		ORG		03DCH
 
-		//;MAIN.C: 32: t=25*delay;
+		//;MAIN.C: 32: t = 25 * delay;
 		BCR 	STATUS,5 		//03DC 	1283
 		LDR 	40H,0 			//03DD 	0840
 		STR 	72H 			//03DE 	01F2
@@ -1630,7 +1630,7 @@
 		LDR 	72H,0 			//03E6 	0872
 		STR 	3EH 			//03E7 	01BE
 
-		//;MAIN.C: 33: while(t--){
+		//;MAIN.C: 33: while (t--) {
 		LDWI 	1H 			//03E8 	2A01
 		BCR 	STATUS,5 		//03E9 	1283
 		SUBWR 	3EH,1 			//03EA 	0CBE
@@ -1646,9 +1646,9 @@
 		LJUMP 	3FCH 			//03F3 	3BFC
 		ORG		03F4H
 
-		//;MAIN.C: 34: RC0 = ~RC0;
-		LDWI 	1H 			//03F4 	2A01
-		XORWR 	7H,1 			//03F5 	0487
+		//;MAIN.C: 34: RA3 = ~RA3;
+		LDWI 	8H 			//03F4 	2A08
+		XORWR 	5H,1 			//03F5 	0485
 
 		//;MAIN.C: 35: _delay((unsigned long)((428)*(8000000/4000000.0)));
 		LDWI 	ABH 			//03F6 	2AAB
@@ -1660,8 +1660,8 @@
 		ORG		03FCH
 
 		//;MAIN.C: 37: }
-		//;MAIN.C: 38: RC0 =0;
-		BCR 	7H,0 			//03FC 	1007
+		//;MAIN.C: 38: RA3 = 0;
+		BCR 	5H,3 			//03FC 	1185
 
 		//;MAIN.C: 39: delay_x10ms(delay);
 		LDR 	40H,0 			//03FD 	0840
@@ -1722,9 +1722,9 @@
 		LDWI 	8AH 			//0427 	2A8A
 
 		//;SWUART.C: 14: unsigned char i;
-		//;SWUART.C: 16: RA2 = 0;
+		//;SWUART.C: 16: RA6 = 0;
 		BCR 	STATUS,5 		//0428 	1283
-		BCR 	5H,2 			//0429 	1105
+		BCR 	5H,6 			//0429 	1305
 
 		//;SWUART.C: 18: _delay((unsigned long)(((2000000/9600))*(8000000/4000000.0)));
 		STR 	72H 			//042A 	01F2
@@ -1736,15 +1736,15 @@
 		//;SWUART.C: 19: for(i=0;i<8;i++){
 		CLRR 	74H 			//042E 	0174
 
-		//;SWUART.C: 20: RA2 = (dat&1);
+		//;SWUART.C: 20: RA6 = (dat&1);
 		BTSS 	73H,0 			//042F 	1C73
 		LJUMP 	434H 			//0430 	3C34
 		BCR 	STATUS,5 		//0431 	1283
-		BSR 	5H,2 			//0432 	1905
+		BSR 	5H,6 			//0432 	1B05
 		LJUMP 	436H 			//0433 	3C36
 		ORG		0434H
 		BCR 	STATUS,5 		//0434 	1283
-		BCR 	5H,2 			//0435 	1105
+		BCR 	5H,6 			//0435 	1305
 		LDWI 	8AH 			//0436 	2A8A
 
 		//;SWUART.C: 21: dat=dat>>1;
@@ -1765,10 +1765,10 @@
 		LDWI 	8AH 			//0442 	2A8A
 
 		//;SWUART.C: 24: }
-		//;SWUART.C: 29: RA2 = 1;
+		//;SWUART.C: 29: RA6 = 1;
 		BCR 	STATUS,5 		//0443 	1283
 		ORG		0444H
-		BSR 	5H,2 			//0444 	1905
+		BSR 	5H,6 			//0444 	1B05
 
 		//;SWUART.C: 31: _delay((unsigned long)(((2000000/9600))*(8000000/4000000.0)));
 		STR 	72H 			//0445 	01F2
@@ -1838,7 +1838,7 @@
 		STR 	48H 			//046B 	01C8
 		ORG		046CH
 
-		//;MAIN.C: 136: unsigned char tmp[5]={0xff,0xff,0xff,0xff,0xff};
+		//;MAIN.C: 136: unsigned char tmp[5] = {0xff, 0xff, 0xff, 0xff, 0xff};
 		LDWI 	43H 			//046C 	2A43
 		STR 	FSR 			//046D 	0184
 		LDR 	20H,0 			//046E 	0820
@@ -1863,7 +1863,7 @@
 		BTSS 	STATUS,0 		//047F 	1C03
 		RET		 					//0480 	0004
 
-		//;MAIN.C: 138: id_replate(idMin,tmp,buffTag);
+		//;MAIN.C: 138: id_replate(idMin, tmp, buffTag);
 		LDWI 	43H 			//0481 	2A43
 		STR 	3EH 			//0482 	01BE
 		LDWI 	25H 			//0483 	2A25
@@ -2085,10 +2085,10 @@
 		STR 	3EH 			//0506 	01BE
 
 		//;MAIN.C: 114: unsigned char i;
-		//;MAIN.C: 115: for(i=0;i<21;i+=5){
+		//;MAIN.C: 115: for (i = 0; i < 21; i += 5) {
 		CLRR 	3FH 			//0507 	013F
 
-		//;MAIN.C: 116: if(comArr(id_input,buff+i,5,5))
+		//;MAIN.C: 116: if (comArr(id_input, buff + i, 5, 5))
 		LDR 	3FH,0 			//0508 	083F
 		ADDWR 	7AH,0 			//0509 	0B7A
 		STR 	72H 			//050A 	01F2
@@ -2100,7 +2100,7 @@
 		LCALL 	4C8H 			//050F 	34C8
 		XORWI 	0H 			//0510 	2600
 
-		//;MAIN.C: 117: return i/5 +1;
+		//;MAIN.C: 117: return i / 5 + 1;
 		LDWI 	5H 			//0511 	2A05
 		BTSC 	STATUS,2 		//0512 	1503
 		LJUMP 	51AH 			//0513 	3D1A
@@ -2257,7 +2257,7 @@
 		LJUMP 	57FH 			//058D 	3D7F
 		STR 	74H 			//058E 	01F4
 
-		//;MAIN.C: 25: while(t--)
+		//;MAIN.C: 25: while (t--)
 		DECR 	74H,1 			//058F 	0DF4
 		LDR 	74H,0 			//0590 	0874
 		XORWI 	FFH 			//0591 	26FF
@@ -2294,134 +2294,133 @@
 		INCR	7EH,1 			//05AB 	09FE
 		ORG		05ACH
 		LJUMP 	5A2H 			//05AC 	3DA2
+		STR 	74H 			//05AD 	01F4
+		CLRR 	73H 			//05AE 	0173
+		LDR 	72H,0 			//05AF 	0872
+		BTSC 	74H,0 			//05B0 	1474
+		ADDWR 	73H,1 			//05B1 	0BF3
+		BCR 	STATUS,0 		//05B2 	1003
+		RLR 	72H,1 			//05B3 	05F2
+		ORG		05B4H
+		BCR 	STATUS,0 		//05B4 	1003
+		RRR	74H,1 			//05B5 	06F4
+		LDR 	74H,1 			//05B6 	08F4
+		BTSS 	STATUS,2 		//05B7 	1D03
+		LJUMP 	5AFH 			//05B8 	3DAF
+		LDR 	73H,0 			//05B9 	0873
+		RET		 					//05BA 	0004
 
 		//;sysinit.c: 34: PORTA = 0B00000000;
-		BCR 	STATUS,5 		//05AD 	1283
-		CLRR 	5H 			//05AE 	0105
+		BCR 	STATUS,5 		//05BB 	1283
+		ORG		05BCH
+		CLRR 	5H 			//05BC 	0105
 
-		//;sysinit.c: 35: TRISA = 0B01110011;
-		LDWI 	73H 			//05AF 	2A73
-		BSR 	STATUS,5 		//05B0 	1A83
-		STR 	5H 			//05B1 	0185
+		//;sysinit.c: 35: TRISA = 0B00110111;
+		LDWI 	37H 			//05BD 	2A37
+		BSR 	STATUS,5 		//05BE 	1A83
+		STR 	5H 			//05BF 	0185
 
 		//;sysinit.c: 36: WPUA = 0B10000000;
-		LDWI 	80H 			//05B2 	2A80
-		STR 	15H 			//05B3 	0195
-		ORG		05B4H
+		LDWI 	80H 			//05C0 	2A80
+		STR 	15H 			//05C1 	0195
 
-		//;sysinit.c: 37: PORTC = 0B00000010;
-		LDWI 	2H 			//05B4 	2A02
-		BCR 	STATUS,5 		//05B5 	1283
-		STR 	7H 			//05B6 	0187
+		//;sysinit.c: 37: PORTC = 0B00000000;
+		BCR 	STATUS,5 		//05C2 	1283
+		CLRR 	7H 			//05C3 	0107
+		ORG		05C4H
 
-		//;sysinit.c: 38: TRISC = 0B11111110;
-		LDWI 	FEH 			//05B7 	2AFE
-		BSR 	STATUS,5 		//05B8 	1A83
-		STR 	7H 			//05B9 	0187
+		//;sysinit.c: 38: TRISC = 0B11111101;
+		LDWI 	FDH 			//05C4 	2AFD
+		BSR 	STATUS,5 		//05C5 	1A83
+		STR 	7H 			//05C6 	0187
 
 		//;sysinit.c: 39: WPUC = 0B00000000;
-		CLRR 	13H 			//05BA 	0113
-		RET		 					//05BB 	0004
-		ORG		05BCH
-		STR 	74H 			//05BC 	01F4
-		CLRR 	73H 			//05BD 	0173
-		LDR 	72H,0 			//05BE 	0872
-		BTSC 	74H,0 			//05BF 	1474
-		ADDWR 	73H,1 			//05C0 	0BF3
-		BCR 	STATUS,0 		//05C1 	1003
-		RLR 	72H,1 			//05C2 	05F2
-		BCR 	STATUS,0 		//05C3 	1003
-		ORG		05C4H
-		RRR	74H,1 			//05C4 	06F4
-		LDR 	74H,1 			//05C5 	08F4
-		BTSS 	STATUS,2 		//05C6 	1D03
-		LJUMP 	5BEH 			//05C7 	3DBE
-		LDR 	73H,0 			//05C8 	0873
-		RET		 					//05C9 	0004
-		LDWI 	5H 			//05CA 	2A05
-		STR 	PCLATH 			//05CB 	018A
+		CLRR 	13H 			//05C7 	0113
+		RET		 					//05C8 	0004
+		LDWI 	5H 			//05C9 	2A05
+		STR 	PCLATH 			//05CA 	018A
+		LDR 	FSR,0 			//05CB 	0804
 		ORG		05CCH
-		LDR 	FSR,0 			//05CC 	0804
-		INCR	FSR,1 			//05CD 	0984
-		ADDWR 	PCL,1 			//05CE 	0B82
-		RETW 	0H 			//05CF 	2100
-		RETW 	AH 			//05D0 	210A
-		RETW 	54H 			//05D1 	2154
-		RETW 	61H 			//05D2 	2161
-		RETW 	67H 			//05D3 	2167
+		INCR	FSR,1 			//05CC 	0984
+		ADDWR 	PCL,1 			//05CD 	0B82
+		RETW 	0H 			//05CE 	2100
+		RETW 	AH 			//05CF 	210A
+		RETW 	54H 			//05D0 	2154
+		RETW 	61H 			//05D1 	2161
+		RETW 	67H 			//05D2 	2167
+		RETW 	3AH 			//05D3 	213A
 		ORG		05D4H
-		RETW 	3AH 			//05D4 	213A
-		RETW 	20H 			//05D5 	2120
-		RETW 	0H 			//05D6 	2100
-		STR 	75H 			//05D7 	01F5
+		RETW 	20H 			//05D4 	2120
+		RETW 	0H 			//05D5 	2100
+		STR 	75H 			//05D6 	01F5
 
 		//;SWUART.C: 36: while(*str){
-		LDR 	75H,0 			//05D8 	0875
-		STR 	FSR 			//05D9 	0184
-		LCALL 	5CAH 			//05DA 	35CA
-		IORWI 	0H 			//05DB 	2500
+		LDR 	75H,0 			//05D7 	0875
+		STR 	FSR 			//05D8 	0184
+		LCALL 	5C9H 			//05D9 	35C9
+		IORWI 	0H 			//05DA 	2500
+		BTSC 	STATUS,2 		//05DB 	1503
 		ORG		05DCH
-		BTSC 	STATUS,2 		//05DC 	1503
-		RET		 					//05DD 	0004
+		RET		 					//05DC 	0004
 
 		//;SWUART.C: 37: swUartSendByte((char)*str);
-		LDR 	75H,0 			//05DE 	0875
-		STR 	FSR 			//05DF 	0184
-		LCALL 	5CAH 			//05E0 	35CA
-		LCALL 	426H 			//05E1 	3426
+		LDR 	75H,0 			//05DD 	0875
+		STR 	FSR 			//05DE 	0184
+		LCALL 	5C9H 			//05DF 	35C9
+		LCALL 	426H 			//05E0 	3426
 
 		//;SWUART.C: 38: str++;
-		INCR	75H,1 			//05E2 	09F5
-		LJUMP 	5D8H 			//05E3 	3DD8
-		ORG		05E4H
+		INCR	75H,1 			//05E1 	09F5
+		LJUMP 	5D7H 			//05E2 	3DD7
 
 		//;sysinit.c: 72: INTCON = 0B00000000;
-		CLRR 	INTCON 			//05E4 	010B
+		CLRR 	INTCON 			//05E3 	010B
+		ORG		05E4H
 
 		//;sysinit.c: 73: PIE1 = 0B00000000;
-		CLRR 	CH 			//05E5 	010C
+		CLRR 	CH 			//05E4 	010C
 
 		//;sysinit.c: 74: PIR1 = 0B00000000;
-		BCR 	STATUS,5 		//05E6 	1283
-		CLRR 	CH 			//05E7 	010C
+		BCR 	STATUS,5 		//05E5 	1283
+		CLRR 	CH 			//05E6 	010C
 
 		//;sysinit.c: 87: T0IF = 0;
-		BCR 	INTCON,2 		//05E8 	110B
+		BCR 	INTCON,2 		//05E7 	110B
 
 		//;sysinit.c: 88: T0IE = 0;
-		BCR 	INTCON,5 		//05E9 	128B
+		BCR 	INTCON,5 		//05E8 	128B
 
 		//;sysinit.c: 92: TMR2IF = 0;
-		BCR 	CH,1 			//05EA 	108C
+		BCR 	CH,1 			//05E9 	108C
 
 		//;sysinit.c: 93: TMR2IE = 1;
-		BSR 	STATUS,5 		//05EB 	1A83
+		BSR 	STATUS,5 		//05EA 	1A83
+		BSR 	CH,1 			//05EB 	188C
 		ORG		05ECH
-		BSR 	CH,1 			//05EC 	188C
 
 		//;sysinit.c: 99: PEIE = 0;
-		BCR 	INTCON,6 		//05ED 	130B
+		BCR 	INTCON,6 		//05EC 	130B
 
 		//;sysinit.c: 101: GIE = 1;
-		BSR 	INTCON,7 		//05EE 	1B8B
-		RET		 					//05EF 	0004
-		STR 	74H 			//05F0 	01F4
+		BSR 	INTCON,7 		//05ED 	1B8B
+		RET		 					//05EE 	0004
+		STR 	74H 			//05EF 	01F4
 
 		//;MAIN.C: 108: mtState = stt;
-		BCR 	STATUS,5 		//05F1 	1283
-		STR 	61H 			//05F2 	01E1
+		BCR 	STATUS,5 		//05F0 	1283
+		STR 	61H 			//05F1 	01E1
 
-		//;MAIN.C: 109: timeTick =0;
-		CLRR 	5EH 			//05F3 	015E
+		//;MAIN.C: 109: timeTick = 0;
+		CLRR 	5EH 			//05F2 	015E
+		CLRR 	5FH 			//05F3 	015F
 		ORG		05F4H
-		CLRR 	5FH 			//05F4 	015F
 
 		//;MAIN.C: 110: timeOut = _tOut;
-		LDR 	73H,0 			//05F5 	0873
-		STR 	5DH 			//05F6 	01DD
-		LDR 	72H,0 			//05F7 	0872
-		STR 	5CH 			//05F8 	01DC
-		RET		 					//05F9 	0004
+		LDR 	73H,0 			//05F4 	0873
+		STR 	5DH 			//05F5 	01DD
+		LDR 	72H,0 			//05F6 	0872
+		STR 	5CH 			//05F7 	01DC
+		RET		 					//05F8 	0004
 		ORG		0600H
 		LJUMP 	FEH 			//0600 	38FE
 		LJUMP 	C3H 			//0601 	38C3

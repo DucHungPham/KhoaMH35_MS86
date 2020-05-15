@@ -26,15 +26,15 @@ startup.obj     end_init                              A        A        1       
                 reset_vec                             0        0        1        0       0
 smartkey.obj    intentry                              4        4        6        8       0
                 text584                             618      618        7      C10       0
-                text583                             5AD      5AD        F        8       0
+                text583                             5BB      5BB        E        8       0
                 text582                             61F      61F        3      C10       0
-                text581                             5E4      5E4        C      BAE       0
+                text581                             5E3      5E3        C      BAC       0
                 text580                             610      610        8      C10       0
                 text579                             4C8      4C8       1F        8       0
                 text578                             4A9      4A9       1F        8       0
                 text577                             48A      48A       1F        8       0
-                text576                             5F0      5F0        A      BAE       0
-                text575                             5BC      5BC        E        8       0
+                text576                             5EF      5EF        A      BAC       0
+                text575                             5AD      5AD        E        8       0
                 text574                             53B      53B       19        8       0
                 text573                             520      520       1B        8       0
                 text572                             608      608        8      C10       0
@@ -46,7 +46,7 @@ smartkey.obj    intentry                              4        4        6       
                 text566                             426      426       24        8       0
                 text565                             56B      56B       12        8       0
                 text564                             3D5      3D5       2B        8       0
-                text563                             5D7      5D7        D      BAE       0
+                text563                             5D6      5D6        D      BAC       0
                 text562                             400      400       26        8       0
                 text561                             39A      39A       3B        8       0
                 text560                             46B      46B       1F        8       0
@@ -58,7 +58,7 @@ smartkey.obj    intentry                              4        4        6       
                 dataBANK0                            20       20       1E       20       1
                 bssBANK0                             5C       5C        B       20       1
                 cinit                               554      554       17        8       0
-                strings                             5CA      5CA        D      B94       0
+                strings                             5C9      5C9        D      B92       0
                 idataBANK0                          4E7      4E7       1E        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -70,15 +70,15 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intentry                              4        4        6         0
                 reset_vec                             0        0        1         0
                 text584                             618      618        7         0
-                text583                             5AD      5AD        F         0
+                text583                             5BB      5BB        E         0
                 text582                             61F      61F        3         0
-                text581                             5E4      5E4        C         0
+                text581                             5E3      5E3        C         0
                 text580                             610      610        8         0
                 text579                             4C8      4C8       1F         0
                 text578                             4A9      4A9       1F         0
                 text577                             48A      48A       1F         0
-                text576                             5F0      5F0        A         0
-                text575                             5BC      5BC        E         0
+                text576                             5EF      5EF        A         0
+                text575                             5AD      5AD        E         0
                 text574                             53B      53B       19         0
                 text573                             520      520       1B         0
                 text572                             608      608        8         0
@@ -90,7 +90,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text566                             426      426       24         0
                 text565                             56B      56B       12         0
                 text564                             3D5      3D5       2B         0
-                text563                             5D7      5D7        D         0
+                text563                             5D6      5D6        D         0
                 text562                             400      400       26         0
                 text561                             39A      39A       3B         0
                 text560                             46B      46B       1F         0
@@ -104,7 +104,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   STRING         
-                strings                             5CA      5CA        D         0
+                strings                             5C9      5C9        D         0
 
         CLASS   BANK0          
                 cstackBANK0                          3E       3E       1E         1
@@ -142,11 +142,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  0005C6  0005CA         8       0  CODE        2
+                intentry                       000004  0005C5  0005C9         8       0  CODE        2
                 dataBANK0                      000020  000047  000067        20       1  BANK0       1
                 cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
-                strings                        0005CA  00000D  0005D7       B94       0  STRING      2
-                text563                        0005D7  000023  0005FA       BAE       0  CODE        2
+                strings                        0005C9  00000D  0005D6       B92       0  STRING      2
+                text563                        0005D6  000023  0005F9       BAC       0  CODE        2
                 swtext1                        000600  000008  000608       C00       0  CONST       2
                 text572                        000608  00001A  000622       C10       0  CODE        2
 
@@ -157,16 +157,16 @@ UNUSED ADDRESS RANGES
         BANK0            067-06F             9           1
         BANK1            0A0-0BF            20           1
         CODE             001-003             3           2
-                         5FA-5FF             6
+                         5F9-5FF             7
                          622-7FF           1DE
         COMMON           07C-07D             2           1
         CONFIG           2007-2007             1           2
         CONST            001-003             3           2
-                         5FA-5FF             6
+                         5F9-5FF             7
                          622-7FF            DE
         EEDATA           2100-21FF           100           2
         ENTRY            001-003             3           2
-                         5FA-5FF             6
+                         5F9-5FF             7
                          622-7FF            DE
         IDLOC            2000-2003             4           2
         RAM              067-06F             9           1
@@ -174,10 +174,10 @@ UNUSED ADDRESS RANGES
         SFR0             000-01F            20           1
         SFR1             080-09F            20           1
         STRCODE          001-003             3           2
-                         5FA-5FF             6
+                         5F9-5FF             7
                          622-7FF           1DE
         STRING           001-003             3           2
-                         5FA-5FF             6
+                         5F9-5FF             7
                          622-7FF            DE
 
                                   Symbol Table
@@ -308,10 +308,9 @@ _PSTRCON                    (abs)        19D
 _PULSR                      (abs)        CF2
 _PULSS                      (abs)        CF3
 _PwInNum                    bssBANK0     060
-_RA2                        (abs)        02A
 _RA3                        (abs)        02B
 _RA5                        (abs)        02D
-_RC0                        (abs)        038
+_RA6                        (abs)        02E
 _RC1                        (abs)        039
 _RD                         (abs)        4E0
 _SET_EPWM_ON                text577      48A
@@ -417,7 +416,7 @@ __Ltext                     text         000
 __S0                        (abs)        622
 __S1                        (abs)        07C
 __S2                        (abs)        000
-___bmul                     text575      5BC
+___bmul                     text575      5AD
 ___bmul@multiplicand        cstackCOMMON 072
 ___bmul@multiplier          cstackCOMMON 074
 ___bmul@product             cstackCOMMON 073
@@ -433,7 +432,7 @@ ___wmul@product             cstackCOMMON 076
 __end_of_ISR                text584      61F
 __end_of_SET_EPWM_ON        text577      4A9
 __end_of_SendNum            text562      426
-__end_of___bmul             text575      5CA
+__end_of___bmul             text575      5BB
 __end_of___lbdiv            text573      53B
 __end_of___wmul             text574      554
 __end_of_beep               text564      400
@@ -444,15 +443,15 @@ __end_of_eepromReadByte     text580      618
 __end_of_eepromWriteBlock   text565      57D
 __end_of_eepromWriteByte    text570      46B
 __end_of_get_RFID           text569      388
-__end_of_gpio_init          text583      5BC
+__end_of_gpio_init          text583      5C9
 __end_of_id_clear           text560      48A
 __end_of_id_replate         text561      3CE
 __end_of_id_search          text567      520
-__end_of_int_init           text581      5F0
+__end_of_int_init           text581      5EF
 __end_of_main               maintext     250
-__end_of_setState           text576      5FA
+__end_of_setState           text576      5F9
 __end_of_swUartSendByte     text566      44A
-__end_of_swUartSendString   text563      5E4
+__end_of_swUartSendString   text563      5E3
 __end_of_sys_init           text572      610
 __end_of_timerOut           text578      4C8
 __end_of_timer_init         text582      622
@@ -463,12 +462,12 @@ __pdataBANK0                dataBANK0    020
 __pidataBANK0               idataBANK0   4E7
 __pintentry                 intentry     004
 __pmaintext                 maintext     00B
-__pstrings                  strings      5CA
+__pstrings                  strings      5C9
 __pswtext1                  swtext1      600
 __ptext560                  text560      46B
 __ptext561                  text561      39A
 __ptext562                  text562      400
-__ptext563                  text563      5D7
+__ptext563                  text563      5D6
 __ptext564                  text564      3D5
 __ptext565                  text565      56B
 __ptext566                  text566      426
@@ -480,15 +479,15 @@ __ptext571                  text571      57D
 __ptext572                  text572      608
 __ptext573                  text573      520
 __ptext574                  text574      53B
-__ptext575                  text575      5BC
-__ptext576                  text576      5F0
+__ptext575                  text575      5AD
+__ptext576                  text576      5EF
 __ptext577                  text577      48A
 __ptext578                  text578      4A9
 __ptext579                  text579      4C8
 __ptext580                  text580      610
-__ptext581                  text581      5E4
+__ptext581                  text581      5E3
 __ptext582                  text582      61F
-__ptext583                  text583      5AD
+__ptext583                  text583      5BB
 __ptext584                  text584      618
 __ptext585                  text585      000
 __size_of_ISR               (abs)        000
@@ -527,17 +526,17 @@ _eepromWriteBlock           text565      56B
 _eepromWriteByte            text570      44A
 _exit                       init         00A
 _get_RFID                   text569      250
-_gpio_init                  text583      5AD
+_gpio_init                  text583      5BB
 _id_clear                   text560      46B
 _id_replate                 text561      39A
 _id_search                  text567      505
-_int_init                   text581      5E4
+_int_init                   text581      5E3
 _keyID                      bssBANK0     062
 _main                       maintext     00B
 _mtState                    bssBANK0     061
-_setState                   text576      5F0
+_setState                   text576      5EF
 _swUartSendByte             text566      426
-_swUartSendString           text563      5D7
+_swUartSendString           text563      5D6
 _sys_init                   text572      608
 _timeOut                    bssBANK0     05C
 _timeTick                   bssBANK0     05E
