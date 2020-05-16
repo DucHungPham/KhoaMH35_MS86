@@ -2,6 +2,7 @@ ___lbdiv@counter 74 0 COMMON
 _RD 4E0 0 ABS
 _WR 4E8 0 ABS
 __size_of_swUartSendString 0 0 ABS
+_RA2 2A 0 ABS
 _RC1 39 0 ABS
 _RA3 2B 0 ABS
 _RA5 2D 0 ABS

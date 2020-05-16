@@ -2766,9 +2766,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAIN.C: 411: case 7:
 "411
 [e :U 173 ]
-[; ;MAIN.C: 413: if (RC1 == 1) {
+[; ;MAIN.C: 413: if (RA2 == 1) {
 "413
-[e $ ! == -> _RC1 `i -> 1 `i 174  ]
+[e $ ! == -> _RA2 `i -> 1 `i 174  ]
 {
 [; ;MAIN.C: 414: PwInNum++;
 "414

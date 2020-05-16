@@ -308,6 +308,7 @@ _PSTRCON                    (abs)        19D
 _PULSR                      (abs)        CF2
 _PULSS                      (abs)        CF3
 _PwInNum                    bssBANK0     060
+_RA2                        (abs)        02A
 _RA3                        (abs)        02B
 _RA5                        (abs)        02D
 _RA6                        (abs)        02E

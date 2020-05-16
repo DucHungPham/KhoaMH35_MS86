@@ -410,7 +410,7 @@ void main(void)
 				break;
 			case _PwTp:
 
-				if (RC1 == 1) {
+				if (RA2 == 1) {
 					PwInNum++;
 					tmp = eepromReadByte(addNoPw);
 					if (tmp > 0 && tmp < 4) {

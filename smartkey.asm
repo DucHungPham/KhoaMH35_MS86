@@ -790,8 +790,8 @@
 		ORG		01DCH
 
 		//;MAIN.C: 411: case 7:
-		//;MAIN.C: 413: if (RC1 == 1) {
-		BTSS 	7H,1 			//01DC 	1C87
+		//;MAIN.C: 413: if (RA2 == 1) {
+		BTSS 	5H,2 			//01DC 	1D05
 		LJUMP 	208H 			//01DD 	3A08
 		LDWI 	2H 			//01DE 	2A02
 

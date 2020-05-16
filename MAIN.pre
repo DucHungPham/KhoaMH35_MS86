@@ -1390,7 +1390,7 @@ eepromWriteByte(0x02, 0);
 break;
 case 7:
 
-if (RC1 == 1) {
+if (RA2 == 1) {
 PwInNum++;
 tmp = eepromReadByte(0x02);
 if (tmp > 0 && tmp < 4) {

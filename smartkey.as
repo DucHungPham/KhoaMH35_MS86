@@ -429,6 +429,8 @@ _EEIF	set	103
 _GIE	set	95
 	global	_PEIE
 _PEIE	set	94
+	global	_RA2
+_RA2	set	42
 	global	_RA3
 _RA3	set	43
 	global	_RA5
@@ -2321,8 +2323,8 @@ l7705:
 	
 l4222:	
 	line	413
-;MAIN.C: 413: if (RC1 == 1) {
-	btfss	(57/8),(57)&7
+;MAIN.C: 413: if (RA2 == 1) {
+	btfss	(42/8),(42)&7
 	goto	u2251
 	goto	u2250
 u2251:
